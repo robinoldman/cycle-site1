@@ -10,6 +10,8 @@ class PostList(generic.ListView):
     template_name = "index.html"
     paginate_by = 6
 
+def map_view(request):
+    return render(request, 'map.html')
 
 class PostDetail(View):
 
