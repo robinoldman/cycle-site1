@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from .models import Post
 from .forms import CommentForm
+from .forms import RouteForm
 
 
 class PostList(generic.ListView):
@@ -34,4 +35,15 @@ class PostDetail(View):
                 "comment_form": CommentForm()
             },
         )
+
+def create_route(request):
+    if request.method == 'POST':
+        form = RouteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('route_list')  # Redirect to a success page or another view
+    else:
+        form = RouteForm()
+    
+    return render(request, 'create_route.html', {'form': form})
     

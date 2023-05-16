@@ -3,6 +3,16 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
+class Route(models.Model):
+    distance = models.FloatField()
+    duration = models.FloatField()
+    user_data = models.CharField(max_length=100)
+    # Add more fields as needed
+    
+    def __str__(self):
+        return f"Route {self.pk}"
+
+
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
