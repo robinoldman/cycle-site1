@@ -1,9 +1,33 @@
 {% extends "base.html" %}
 
 {% block content %}
-<form method="POST" action="{% url 'create_event' %}">
+  <form method="POST" action="{% url 'create_event' %}">
     {% csrf_token %}
     {{ form.as_p }}
+    <button type="button" id="currentStartTimeBtn">Insert Current Start Time</button>
+    <button type="button" id="currentEndTimeBtn">Insert Current End Time</button>
     <button type="submit">Submit</button>
   </form>
+
+  <script>
+    function getCurrentTimeWithSeconds() {
+      var now = new Date();
+      var hours = now.getHours().toString().padStart(2, '0');
+      var minutes = now.getMinutes().toString().padStart(2, '0');
+      var seconds = now.getSeconds().toString().padStart(2, '0');
+      return hours + ':' + minutes + ':' + seconds;
+    }
+
+    document.getElementById("currentStartTimeBtn").addEventListener("click", function() {
+      var currentStartTime = getCurrentTimeWithSeconds();
+      var startTimeField = document.getElementById("id_start_time");
+      startTimeField.value = currentStartTime;
+    });
+
+    document.getElementById("currentEndTimeBtn").addEventListener("click", function() {
+      var currentEndTime = getCurrentTimeWithSeconds();
+      var endTimeField = document.getElementById("id_end_time");
+      endTimeField.value = currentEndTime;
+    });
+  </script>
 {% endblock %}
