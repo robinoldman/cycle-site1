@@ -2,6 +2,19 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from .models import Post
 from .forms import CommentForm
+from .models import Event
+from .forms import CreateEventForm
+
+
+def create_event(request):
+    if request.method == 'POST':
+        form = CreateEventForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('event_list')  # Redirect to the event list page after successful form submission
+    else:
+        form = CreateEventForm()
+    return render(request, 'create_event.html', {'form': form})
 
 
 
