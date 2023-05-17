@@ -52,6 +52,7 @@ class Comment(models.Model):
 
 
 class Event(models.Model):
+    name = models.CharField(max_length=80)
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
     start_place = models.CharField(max_length=80)
