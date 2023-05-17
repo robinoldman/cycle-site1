@@ -3,14 +3,6 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
-class Route(models.Model):
-    distance = models.FloatField()
-    duration = models.FloatField()
-    user_data = models.CharField(max_length=100)
-    # Add more fields as needed
-    
-    def __str__(self):
-        return f"Route {self.pk}"
 
 
 
@@ -57,3 +49,12 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+
+
+class Event(models.Model):
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField()
+    start_place = models.CharField(max_length=80)
+
+    def __str__(self):
+        return self.name
