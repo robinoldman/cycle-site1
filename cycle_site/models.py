@@ -59,3 +59,16 @@ class Event(models.Model):
 
     def __str__(self):
         return self.name
+
+class own_route(models.Model):
+    name = models.CharField(max_length=80, default='enter name')
+    start_point = models.CharField(max_length=80, )
+    end_point = models.CharField(max_length=80, )
+    difficulty_rating = models.CharField(max_length=80, )
+    description = models.TextField(max_length=300,)
+    image= models.ImageField(default='enter image')
+
+ 
+
+
+
