@@ -4,6 +4,9 @@ from .models import Post
 from .forms import CommentForm
 from .models import Event
 from .forms import CreateEventForm
+from .models import own_route
+from .forms import RouteForm
+from django.contrib import messages
 
 
 def create_event(request):
@@ -11,12 +14,21 @@ def create_event(request):
         form = CreateEventForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('event_list')  # Redirect to the event list page after successful form submission
+            messages.success(request, "This is a success message.")
+            return render(request, 'index.html')  
     else:
         form = CreateEventForm()
     return render(request, 'create_event.html', {'form': form})
 
-
+def own_route(request):
+    if request.method == 'POST':
+        form = RouteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'index.html')
+    else:
+        form = RouteForm()
+    return render(request, 'own_route.html', {'form': form})
 
 
 class PostList(generic.ListView):

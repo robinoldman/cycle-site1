@@ -53,8 +53,8 @@ class Comment(models.Model):
 
 class Event(models.Model):
     name = models.CharField(max_length=80, default='enter name')
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
+    start_time = models.TimeField()
+    end_time = models.TimeField()
     start_place = models.CharField(max_length=80)
 
     def __str__(self):
@@ -68,6 +68,8 @@ class own_route(models.Model):
     description = models.TextField(max_length=300,)
     image= models.ImageField(default='enter image')
 
+    def __str__(self):
+        return self.name
  
 
 
