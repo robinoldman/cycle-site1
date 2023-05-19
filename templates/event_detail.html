@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>route details</h3>
+<!--The div element for the map -->
+<h1>{{ event.name }}</h1>
+<p>Start Time: {{ event.start_time }}</p>
+<p>End Time: {{ event.end_time }}</p>
+<p>Start Place: {{ event.start_place }}</p>
+
+<script src="../static/script.js"></script>
+{% endblock %}

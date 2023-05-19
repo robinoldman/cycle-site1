@@ -15,19 +15,32 @@ def create_event(request):
         if form.is_valid():
             form.save()
             messages.success(request, "This is a success message.")
-            return render(request, 'index.html')  
+            return render(request, 'event_detail.html')  
     else:
         form = CreateEventForm()
     return render(request, 'create_event.html', {'form': form})
+
+class EventDetail(View):
+    def get(self, request, event_id, *args, **kwargs):
+        event = get_object_or_404(Event, id=event_id)
+
+        return render(
+            request,
+            "event_detail.html",
+            {
+                "event": event,
+            },
+        )
+
 
 def own_route(request):
     if request.method == 'POST':
         form = RouteForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'index.html')
-    else:
-        form = RouteForm()
+            return render(request, 'own_route.html')
+
+    form = RouteForm()
     return render(request, 'own_route.html', {'form': form})
 
 
