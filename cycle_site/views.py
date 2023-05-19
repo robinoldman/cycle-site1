@@ -31,7 +31,7 @@ class EventDetail(View):
                 "event": event,
             },
         )
-
+1452c0c0de30fdef569b9ad86a362b21acb98fc8
 
 def own_route(request):
     if request.method == 'POST':

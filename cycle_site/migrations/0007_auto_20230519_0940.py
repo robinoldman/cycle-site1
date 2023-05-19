@@ -13,11 +13,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='event',
             name='end_time',
-            field=models.DateTimeField(),
+            field=models.TimeField(),
         ),
         migrations.AlterField(
             model_name='event',
             name='start_time',
-            field=models.DateTimeField(),
+            field=models.TimeField(),
         ),
     ]
