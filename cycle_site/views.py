@@ -15,12 +15,14 @@ def create_event(request):
         if form.is_valid():
             form.save()
             messages.success(request, "This is a success message.")
-            return render(request, 'event_detail.html')  
+
+            return redirect('event_detail')
     else:
         form = CreateEventForm()
     return render(request, 'create_event.html', {'form': form})
 
-class EventDetail(View):
+
+class event_detail(View):
     def get(self, request, event_id, *args, **kwargs):
         event = get_object_or_404(Event, id=event_id)
 
@@ -28,7 +30,10 @@ class EventDetail(View):
             request,
             "event_detail.html",
             {
-                "event": event,
+                'name': name,
+                'start_time': start_time,
+                'end_time': end_time,
+                'start_place': start_place
             },
         )
 
@@ -50,8 +55,10 @@ class PostList(generic.ListView):
     template_name = "index.html"
     paginate_by = 6
 
+
 def map_view(request):
     return render(request, 'map.html')
+
 
 class PostDetail(View):
 
@@ -74,6 +81,3 @@ class PostDetail(View):
                 "comment_form": CommentForm()
             },
         )
-
-
-    
