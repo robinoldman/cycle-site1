@@ -7,6 +7,7 @@ from .forms import CreateEventForm
 from .models import own_route
 from .forms import RouteForm
 from django.contrib import messages
+from django.views.generic.list import ListView
 
 
 def create_event(request):
@@ -16,26 +17,15 @@ def create_event(request):
             form.save()
             messages.success(request, "This is a success message.")
 
-            return redirect('event_detail')
+            return redirect('event_detail',)
     else:
         form = CreateEventForm()
     return render(request, 'create_event.html', {'form': form})
 
 
-class event_detail(View):
-    def get(self, request, event_id, *args, **kwargs):
-        event = get_object_or_404(Event, id=event_id)
-
-        return render(
-            request,
-            "event_detail.html",
-            {
-                'name': name,
-                'start_time': start_time,
-                'end_time': end_time,
-                'start_place': start_place
-            },
-        )
+class event_detail(ListView):
+    model = Event
+    template_name = "event_detail.html"
 
 
 def own_route(request):
