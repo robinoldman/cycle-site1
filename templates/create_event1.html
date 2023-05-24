@@ -1,6 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+<h3>My Google Maps Demo</h3>
+<!--The div element for the map -->
+<div id="map"></div>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTcR7zZ261S2sxhPtcnbGodSfbKWcVFWo&libraries=places"></script>
+
+
+<script src="../static/maps.js"></script>
+
 <form method="POST" action="{% url 'create_event1' %}">
     {% csrf_token %}
     {{ form.as_p }}
