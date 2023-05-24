@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for event in object_list %}
+
+<h3>route details 2</h3>
+<h1>{{ event2.name }}</h1>
+<p>Start Time: {{ event2.start_time }}</p>
+<p>End Time: {{ event2.end_time }}</p>
+
+
+
+{% endfor %}
+<script src="../static/script.js"></script>
+{% endblock %}

@@ -3,10 +3,6 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
-
-
-
-
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
@@ -60,17 +56,41 @@ class Event(models.Model):
     def __str__(self):
         return self.name
 
+
+class Event1(models.Model):
+    name = models.CharField(max_length=80, default='enter name')
+    start_time = models.TimeField()
+    end_time = models.TimeField()
+
+    def __str__(self):
+        return self.name
+
+
+class Event2(models.Model):
+    name = models.CharField(max_length=80, default='enter name')
+    start_time = models.TimeField()
+    end_time = models.TimeField()
+
+    def __str__(self):
+        return self.name
+
+
+class Event3(models.Model):
+    name = models.CharField(max_length=80, default='enter name')
+    start_time = models.TimeField()
+    end_time = models.TimeField()
+
+    def __str__(self):
+        return self.name
+
+
 class own_route(models.Model):
     name = models.CharField(max_length=80, default='enter name')
     start_point = models.CharField(max_length=80, )
     end_point = models.CharField(max_length=80, )
     difficulty_rating = models.CharField(max_length=80, )
     description = models.TextField(max_length=300,)
-    image= models.ImageField(default='enter image')
+    image = models.ImageField(default='enter image')
 
     def __str__(self):
         return self.name
- 
-
-
-

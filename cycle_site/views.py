@@ -4,10 +4,16 @@ from .models import Post
 from .forms import CommentForm
 from .models import Event
 from .forms import CreateEventForm
+from .forms import CreateEventForm1
+from .forms import CreateEventForm2
+from .forms import CreateEventForm3
 from .models import own_route
 from .forms import RouteForm
 from django.contrib import messages
 from django.views.generic.list import ListView
+from .models import Event1
+from .models import Event2
+from .models import Event3
 
 
 def create_event(request):
@@ -23,9 +29,63 @@ def create_event(request):
     return render(request, 'create_event.html', {'form': form})
 
 
+def create_event1(request):
+    if request.method == 'POST':
+        form = CreateEventForm1(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "This is a success message.")
+
+            return redirect('event_detail1',)
+    else:
+        form = CreateEventForm1()
+    return render(request, 'create_event1.html', {'form': form})
+
+
+def create_event2(request):
+    if request.method == 'POST':
+        form = CreateEventForm2(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "This is a success message.")
+
+            return redirect('event_detail2',)
+    else:
+        form = CreateEventForm2()
+    return render(request, 'create_event2.html', {'form': form})
+
+
+def create_event3(request):
+    if request.method == 'POST':
+        form = CreateEventForm3(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "This is a success message.")
+
+            return redirect('event_detail3',)
+    else:
+        form = CreateEventForm3()
+    return render(request, 'create_event3.html', {'form': form})
+
+
 class event_detail(ListView):
     model = Event
     template_name = "event_detail.html"
+
+
+class event_detail1(ListView):
+    model = Event1
+    template_name = "event_detail1.html"
+
+
+class event_detail2(ListView):
+    model = Event2
+    template_name = "event_detail2.html"
+
+
+class event_detail3(ListView):
+    model = Event3
+    template_name = "event_detail3.html"
 
 
 def own_route(request):
@@ -48,6 +108,10 @@ class PostList(generic.ListView):
 
 def map_view(request):
     return render(request, 'map.html')
+
+
+def set_routes(request):
+    return render(request, 'set_routes.html')
 
 
 class PostDetail(View):

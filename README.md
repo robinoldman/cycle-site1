@@ -10,7 +10,7 @@ os.environ["CLOUDINARY_URL"] = 'cloudinary://962444711949455:IEF70dVolBgsnC0nr_H
 
 env.py
 
-pip install - r requirements.txt
+pip install -r requirements.txt
 
 This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 

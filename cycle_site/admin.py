@@ -1,10 +1,14 @@
 from django.contrib import admin
-from .models import Post, Comment, Event, own_route
+from .models import Post, Comment, Event, Event1, Event2, Event3, own_route
 from django_summernote.admin import SummernoteModelAdmin
 
 admin.site.register(Event)
+admin.site.register(Event1)
+admin.site.register(Event2)
+admin.site.register(Event3)
 
 admin.site.register(own_route)
+
 
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
@@ -25,8 +29,3 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
-
-
-
-        
-        
