@@ -15,8 +15,7 @@ urlpatterns = [
     path('event_detail1/', views.event_detail1.as_view(), name='event_detail1'),
     path('event_detail2/', views.event_detail2.as_view(), name='event_detail2'),
     path('event_detail3/', views.event_detail3.as_view(), name='event_detail3'),
-    path('own_route/', views.own_route, name='own_route'),
+    path('user_route/', views.user_route, name='user_route'),
     path('set_routes/', views.set_routes, name='set_routes'),
-    path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
-
-]
+    path('own_route_post/', views.own_route_post.as_view(), name='own_route_post'),
+    path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),]

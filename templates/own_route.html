@@ -2,8 +2,9 @@
 
 {% block content %}
 
-<form method = "POST" action= "{% url 'own_route' %}">
+<form method="POST" action="{% url 'user_route' %}">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Submit</button></form>
+    <button type="submit">Submit</button>
+</form>
 {% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for own_route in object_list %}
+
+<h3>own route</h3>
+<h1>{{ own_route.name }}</h1>
+<p>Start Point: {{ own_route.start_point }}</p>
+<p>End Point: {{ own_route.end_point }}</p>
+<p>difficulty: {{ own_route.difficulty_rating }}</p>
+<p>description: {{ own_route.description }}</p>
+<p>image: {{ own_route.image }}</p>
+
+
+
+{% endfor %}
+<script src="../static/script.js"></script>
+{% endblock %}

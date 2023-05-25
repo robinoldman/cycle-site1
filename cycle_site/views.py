@@ -88,12 +88,18 @@ class event_detail3(ListView):
     template_name = "event_detail3.html"
 
 
-def own_route(request):
+class own_route_post(ListView):
+    model = own_route
+    template_name = "own_route_post.html"
+    paginate_by = 6
+
+
+def user_route(request):
     if request.method == 'POST':
         form = RouteForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'own_route.html')
+            return redirect('own_route_post',)
 
     form = RouteForm()
     return render(request, 'own_route.html', {'form': form})
