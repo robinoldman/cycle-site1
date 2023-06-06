@@ -15,8 +15,9 @@ from .models import Event1
 from .models import Event2
 from .models import Event3
 from .forms import CreateRoute
+from .models import Route
 
-def Route(request):
+def logRoute(request):
     if request.method == 'POST':
         form = CreateRoute(request.POST)
         if form.is_valid():
@@ -29,6 +30,24 @@ def Route(request):
     return render(request, 'route.html', {'form': form})
 
 
+
+def millstatt_routes(request):
+    mill_routes = Route.objects.filter(route='milstatt')
+    return render(request, 'millstatt_routes.html', {'routes': mill_routes})
+
+def millstatt_routes(request):
+    mill_routes = Route.objects.filter(route='milstatt')
+    return render(request, 'millstatt_routes.html', {'routes': mill_routes})
+
+def millstatt_routes(request):
+    mill_routes = Route.objects.filter(route='milstatt')
+    return render(request, 'millstatt_routes.html', {'routes': mill_routes})
+
+def millstatt_routes(request):
+    mill_routes = Route.objects.filter(route='milstatt')
+    return render(request, 'millstatt_routes.html', {'routes': mill_routes})
+    
+        
 def create_event(request):
     if request.method == 'POST':
         form = CreateEventForm(request.POST)

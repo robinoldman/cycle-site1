@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Route Times</h1>
+
+<h2>Latest Times for Route</h2>
+<ul>
+  {% for time in route_times %}
+    <li>{{ time.timestamp }}</li>
+  {% endfor %}
+</ul>
+
+
+
+
+
+{% endfor %}
+<script src="../static/script.js"></script>
+{% endblock %}
