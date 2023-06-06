@@ -36,7 +36,7 @@ def millstatt_routes(request):
     return render(request, 'millstatt_routes.html', {'routes': mill_routes})
 
 def badkleinkircheim_routes(request):
-    bad_routes = Route.objects.filter(route='bad kleinkircheim')
+    bad_routes = Route.objects.filter(route='bad_kleikircheim')
     return render(request, 'badkleinkircheim_routes.html', {'routes': bad_routes})
 
 def wortersee_routes(request):
