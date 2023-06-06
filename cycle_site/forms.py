@@ -5,6 +5,7 @@ from .models import own_route
 from .models import Event1
 from .models import Event2
 from .models import Event3
+from .models import Route
 
 
 class CommentForm(forms.ModelForm):
@@ -40,4 +41,9 @@ class CreateEventForm2(forms.ModelForm):
 class CreateEventForm3(forms.ModelForm):
     class Meta:
         model = Event3
+        fields = '__all__'
+
+class CreateRoute(forms.ModelForm):
+    class Meta:
+        model = Route
         fields = '__all__'

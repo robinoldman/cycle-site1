@@ -94,3 +94,19 @@ class own_route(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Route(models.Model):
+    name = models.CharField(max_length=80, default='enter name')
+    start_time = models.TimeField()
+    end_time = models.TimeField()
+    ROUTE_CHOICES = (
+        ('milstatt', 'Milstatt'),
+        ('bad_kleikircheim', 'Bad Kleikircheim'),
+        ('villach', 'Villach'),
+        ('wortersee', 'Wortersee'),
+    )
+    route = models.CharField(max_length=20, choices=ROUTE_CHOICES)
+
+    def __str__(self):
+        return self.name

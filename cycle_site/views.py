@@ -14,6 +14,19 @@ from django.views.generic.list import ListView
 from .models import Event1
 from .models import Event2
 from .models import Event3
+from .forms import CreateRoute
+
+def Route(request):
+    if request.method == 'POST':
+        form = CreateRoute(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "This is a success message.")
+            return redirect('event_detail')
+    else:
+        form = CreateRoute()
+    
+    return render(request, 'route.html', {'form': form})
 
 
 def create_event(request):

@@ -11,6 +11,7 @@ urlpatterns = [
     path('create_event2/', views.create_event2, name='create_event2'),
     path('create_event3/', views.create_event3, name='create_event3'),
     path('create_event/', views.create_event, name='create_event'),
+    path('route/', views.Route, name='route'),
     path('event_detail/', views.event_detail.as_view(), name='event_detail'),
     path('event_detail1/', views.event_detail1.as_view(), name='event_detail1'),
     path('event_detail2/', views.event_detail2.as_view(), name='event_detail2'),

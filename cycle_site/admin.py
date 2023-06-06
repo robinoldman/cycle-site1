@@ -1,11 +1,15 @@
 from django.contrib import admin
-from .models import Post, Comment, Event, Event1, Event2, Event3, own_route
+from .models import Post, Comment, Event, Event1, Event2, Event3, own_route, Route
 from django_summernote.admin import SummernoteModelAdmin
 
 admin.site.register(Event)
 admin.site.register(Event1)
 admin.site.register(Event2)
 admin.site.register(Event3)
+admin.site.register(Route)
+
+
+
 
 admin.site.register(own_route)
 
