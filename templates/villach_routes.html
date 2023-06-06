@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+<h1>Villach Routes</h1>
+
+{% for route in routes %}
+  <p>Name: {{ route.name }}</p>
+  <p>Start Time: {{ route.start_time }}</p>
+  <p>End Time: {{ route.end_time }}</p>
+{% endfor %}
+<script src="../static/script.js"></script>
+{% endblock %}

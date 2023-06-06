@@ -35,19 +35,19 @@ def millstatt_routes(request):
     mill_routes = Route.objects.filter(route='milstatt')
     return render(request, 'millstatt_routes.html', {'routes': mill_routes})
 
-def millstatt_routes(request):
-    mill_routes = Route.objects.filter(route='milstatt')
-    return render(request, 'millstatt_routes.html', {'routes': mill_routes})
+def badkleinkircheim_routes(request):
+    bad_routes = Route.objects.filter(route='bad kleinkircheim')
+    return render(request, 'badkleinkircheim_routes.html', {'routes': bad_routes})
 
-def millstatt_routes(request):
-    mill_routes = Route.objects.filter(route='milstatt')
-    return render(request, 'millstatt_routes.html', {'routes': mill_routes})
+def wortersee_routes(request):
+    wort_routes = Route.objects.filter(route='wortersee')
+    return render(request, 'wortersee_routes.html', {'routes': wort_routes})
 
-def millstatt_routes(request):
-    mill_routes = Route.objects.filter(route='milstatt')
-    return render(request, 'millstatt_routes.html', {'routes': mill_routes})
-    
-        
+def villach_routes(request):
+    vill_routes = Route.objects.filter(route='villach')
+    return render(request, 'villach_routes.html', {'routes': vill_routes})
+
+
 def create_event(request):
     if request.method == 'POST':
         form = CreateEventForm(request.POST)
