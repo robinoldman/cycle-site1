@@ -2,6 +2,9 @@
 
 
 
+.navbar{
+    z-index: 3;
+}
 
 
 
@@ -16,11 +19,23 @@ body {
     max-height: 700px;
     width: 100%;
 }
+.hero-inner{
+    position: relative;
+    max-height: 700px;
+    width: 100%;
+}
+
+.text-overlay h1,
+.text-overlay h2 {
+    font-size: 75px; 
+}
 
 .text-overlay {
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 100%;
+    
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
@@ -33,12 +48,38 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+    background-color: rgba(0, 0, 0, 0.2); 
     z-index: 0;
 }
 
+/*-------------------- menu images*/
 
+.image-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 75%; /* Adjust the aspect ratio as needed (e.g., 75% for 4:3, 56.25% for 16:9) */
+    overflow: hidden;
+  }
 
+  .image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+.overlay-content{
+    font-size: 3vh;
+    
+}
+
+.overlay
+
+{display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */}
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
@@ -184,3 +225,9 @@ body {
     background-color: grey;
   }
   
+@media (max-width: 1051px) {
+    .text-overlay h1,
+    .text-overlay h2 {
+      font-size: 40px;
+    }
+  }
