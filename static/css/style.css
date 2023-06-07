@@ -52,6 +52,15 @@ body {
     z-index: 0;
 }
 
+/*--------------------intro*/
+
+.row img {
+    width: 300px;
+    height: auto;
+
+
+}
+
 /*-------------------- menu images*/
 
 .image-container {
