@@ -68,19 +68,38 @@ body {
 }
 
 .row{
-    padding: 50px;
+    padding: 40px;
     
 }
 
 .intro {
-    padding-top: 80px;
+    position: relative;
+    padding-top: 20px;
     padding-left: 50px;
     font-size: 4vh;
     display: flex;
     justify-content: center; /* Horizontal centering */
     align-items: center; /* Vertical centering */
+    
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+      }
+
+.intro::after {
+content: "";
+position: absolute;
+left: 50%;
+bottom: 0;
+transform: translateX(-50%);
+width: 270px; 
+height: 1px;
+background-color: #ccc;
 }
 
+.icon-container {
+    display: flex;
+    justify-content: center;
+  }
 /*-------------------- menu images*/
 
 .image-container {
