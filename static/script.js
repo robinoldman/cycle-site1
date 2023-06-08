@@ -106,3 +106,5 @@ window.onload = function () {
     initMap();
 };
 
+/*-------------route panels*/
+

@@ -19,11 +19,24 @@
 </div>
 </div>
 
+<div class="intro">
+  <div class="row">
+    <div class="col-6 col-md-4"><img src="../static/images/austria_Fotor.jpg" alt="Image Description"></div>
+    <div class="col-md-8">We are a group of people who are passionate about cycling in the Alps. Never been to the centre of Austria? This area boasts beautiful views smooth cycling and fresh mountain air. A true hidden gem of Europe.</div>
+  </div>
+  </div>
+
+  <div class="intro">
+    <div class="row">
+      <div class="col-md-8">We are a group of people who are passionate about cycling in the Alps. Never been to the centre of Austria? This area boasts beautiful views smooth cycling and fresh mountain air. A true hidden gem of Europe.</div>
+      <div class="col-6 col-md-4"><img src="../static/images/austria_Fotor.jpg" alt="Image Description"></div>
+    </div>
+    </div>
 
 
 
+<div class="color-block1">
 <div class="container-lg my-5">
-    <h3>Cycle alpine</h3>
     <div class="row">
       <div class="col-12 col-md-6 col-lg-3 mb-4">
         <div class="text-light image-container">
@@ -56,21 +69,25 @@
 </div>
 </div>
 
-<div class="container_students">
+<div class="container_routes">
 <div class="panel active" style="background-image: url('https://images.pexels.com/photos/1687122/pexels-photo-1687122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')">
     <h3>Millstatt Route</h3>
     <h4> difficulty rating easy </h4>
     <div class="d-grid gap-2 col-6 mx-auto">
-      <button type="button" class="btn btn-outline-light">View Route</button>
-    </div>
+      <a href= "{% url 'route' %}" class="btn btn-outline-light">View Route</a>
+      <a href= "{% url 'millstatt_routes' %}" class="btn btn-outline-light">View most recent times </a>
+      <a href= "{% url 'route' %}" class="btn btn-outline-light">View my most recent times</a>
+        </div>
 <div class="overlay-routes"></div> 
 
 </div>
 <div class="panel" style="background-image: url('https://images.pexels.com/photos/1686302/pexels-photo-1686302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')">
     <h3>Bad Kleinkircheim</h3>
     <div class="d-grid gap-2 col-6 mx-auto">
-      <button type="button" class="btn btn-outline-light">View Route</button>
-    </div>
+      <a href= "{% url 'route' %}" class="btn btn-outline-light">View Route</a>
+      <a href= "{% url 'badkleinkircheim' %}" class="btn btn-outline-light">View most recent times </a>
+      <a href= "{% url 'route' %}" class="btn btn-outline-light">View my most recent times</a>
+        </div>
     <div class="overlay-routes"></div>
 </div>
 <div class="panel" style="background-image: url('https://images.pexels.com/photos/1428787/pexels-photo-1428787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')">
@@ -78,8 +95,10 @@
     <h4> difficulty hard
     </h4>
     <div class="d-grid gap-2 col-6 mx-auto">
-      <button type="button" class="btn btn-outline-light">View Route</button>
-    </div>
+      <a href= "{% url 'route' %}" class="btn btn-outline-light">View Route</a>
+      <a href= "{% url 'villach' %}" class="btn btn-outline-light">View most recent times </a>
+      <a href= "{% url 'route' %}" class="btn btn-outline-light">View my most recent times</a>
+        </div>
     <div class="overlay-routes"></div>
 </div>
 <div class="panel" style="background-image: url('https://images.pexels.com/photos/2737232/pexels-photo-2737232.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)">
@@ -88,14 +107,16 @@
       difficulty rating medium  
     </h4>
     <div class="d-grid gap-2 col-6 mx-auto">
-      <button type="button" class="btn btn-outline-light" onclick="window.location.href='templates/villach_routes.html'">View Route</button>
-    </div>
+    <a href= "{% url 'route' %}" class="btn btn-outline-light">View Route</a>
+    <a href= "{% url 'wortersee' %}" class="btn btn-outline-light">View most recent times </a>
+    <a href= "{% url 'route' %}" class="btn btn-outline-light">View my most recent times</a>
+      </div>
     <div class="overlay-routes"></div>
 </div>
 
 </div>
 
 
-</div>
+</div></div>
 <script src="../static/script.js"></script>
 {% endblock %}
