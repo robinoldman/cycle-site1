@@ -18,6 +18,7 @@ body {
     position: relative;
     max-height: 700px;
     width: 100%;
+    
 }
 .hero-inner{
     position: relative;
@@ -57,8 +58,18 @@ body {
 .row img {
     width: 300px;
     height: auto;
+    
 
 
+}
+
+.intro {
+    padding-top: 80px;
+    padding-left: 50px;
+    font-size: 4vh;
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
 }
 
 /*-------------------- menu images*/
@@ -240,3 +251,4 @@ body {
       font-size: 40px;
     }
   }
+
