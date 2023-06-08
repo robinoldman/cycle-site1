@@ -106,4 +106,3 @@ window.onload = function () {
     initMap();
 };
 
-
