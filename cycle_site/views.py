@@ -47,6 +47,8 @@ def villach_routes(request):
     vill_routes = Route.objects.filter(route='villach')
     return render(request, 'villach_routes.html', {'routes': vill_routes})
 
+def team_page(request):
+    return render(request, 'team.html')
 
 def create_event(request):
     if request.method == 'POST':
