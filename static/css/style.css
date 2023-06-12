@@ -480,3 +480,8 @@ background-color: aliceblue;}
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+
+.container h1 {
+    margin-bottom:  50px;
+}
