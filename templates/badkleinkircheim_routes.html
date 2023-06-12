@@ -4,12 +4,31 @@
 
 {% block content %}
 
-<h1>Bad Kleinkircheim Routes</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>Most recent Bad Kleinkircheim Routes</h1>
 
-{% for route in routes %}
-  <p>Name: {{ route.name }}</p>
-  <p>Start Time: {{ route.start_time }}</p>
-  <p>End Time: {{ route.end_time }}</p>
-{% endfor %}
-<script src="../static/script.js"></script>
+        {% for route in routes %}
+          <div class="card" style="margin-bottom: 10px;">  
+            <div class="card-body">
+              <h5 class="card-title">Rider: {{ route.name }}</h5>
+              <p>Start Time: {{ route.start_time }}</p>
+              <p>End Time: {{ route.end_time }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="col-md-4">
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="map"></div>
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTcR7zZ261S2sxhPtcnbGodSfbKWcVFWo&libraries=places"></script>
+  <script src="../static/script.js"></script>
 {% endblock %}
+
