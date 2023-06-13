@@ -141,7 +141,7 @@ background-color: #ccc;
 }
 
 
-
+.overlay
 {display: flex;
     justify-content: center; /* Horizontal centering */
     align-items: center; /* Vertical centering */}
@@ -527,3 +527,12 @@ background-color: aliceblue;}
 }
 
 
+/*------------------- own route ----------------*/
+
+.own-route{
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}

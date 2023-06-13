@@ -2,9 +2,31 @@
 
 {% block content %}
 
-<form method="POST" action="{% url 'user_route' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
+
+<form method="POST" class="own-route" action="{% url 'user_route' %}">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="id_start_point">Start Point:</label>
+    {{ form.start_point }}
+  </div>
+  <div class="form-group">
+    <label for="id_end_point">End Point:</label>
+    {{ form.end_point }}
+  </div>
+  <div class="form-group">
+    <label for="id_difficulty_rating">Difficulty:</label>
+    {{ form.difficulty_rating }}
+  </div>
+  <div class="form-group">
+    <label for="id_description">Description:</label>
+    {{ form.description }}
+  </div>
+  <div class="form-group">
+    <label for="id_image">Image:</label>
+    {{ form.image }}
+  </div>
+  <button type="submit">Submit</button>
 </form>
+
 {% endblock %}
+
