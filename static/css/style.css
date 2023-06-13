@@ -55,6 +55,7 @@ body {
 
 /*--------------------intro*/
 
+
 .row img {
     width: 300px;
     height: auto;
@@ -97,7 +98,9 @@ width: 270px;
 height: 1px;
 background-color: #ccc;
 }
-
+#intro-last{
+    color: #fff;
+}
 .icon-container {
     display: flex;
     justify-content: center;
@@ -479,9 +482,14 @@ background-color: aliceblue;}
     background-image: url("https://images.pexels.com/photos/552785/pexels-photo-552785.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     background-repeat: no-repeat;
     background-size: cover;
+   
 }
+
+
 
 
 .container h1 {
     margin-bottom:  50px;
 }
+
+
