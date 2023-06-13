@@ -2,31 +2,40 @@
 
 {% block content %}
 
-
-<form method="POST" class="own-route" action="{% url 'user_route' %}">
+<div class="background">
+<div class="form-container">
+<form method="POST" " action="{% url 'user_route' %}">
   {% csrf_token %}
-  <div class="form-group">
-    <label for="id_start_point">Start Point:</label>
+  <div  class="col-md-6">
+    <label for="id_start_point"class="form-group">Start Point:</label>
     {{ form.start_point }}
   </div>
-  <div class="form-group">
-    <label for="id_end_point">End Point:</label>
+  <div  class="col-md-6">
+    <label for="id_end_point"class="form-group">End Point:</label>
     {{ form.end_point }}
   </div>
-  <div class="form-group">
-    <label for="id_difficulty_rating">Difficulty:</label>
+  <div  class="col-md-6">
+    <label for="id_difficulty_rating"class="form-group">Difficulty:</label>
     {{ form.difficulty_rating }}
   </div>
-  <div class="form-group">
-    <label for="id_description">Description:</label>
+  <div class="col-md-12">
+    <label for="id_description" class="form-group" >Description:</label>
     {{ form.description }}
   </div>
-  <div class="form-group">
+  <div class="form-group col">
     <label for="id_image">Image:</label>
-    {{ form.image }}
+    <div class="input-group">
+      <div class="custom-button">
+        <input type="file" name="image" id="id_image" class="custom-file-input" aria-describedby="inputGroupFileAddon">
+        <label class="custom-file-label btn btn-outline-primary" for="id_image">Browse</label>
+      </div>
+    </div>
   </div>
-  <button type="submit">Submit</button>
+  
+  
+  <button type="submit" class= "btn btn-outline-success" >Submit</button>
 </form>
-
+</div>
+</div>
 {% endblock %}
 

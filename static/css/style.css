@@ -337,7 +337,6 @@ background-color: #ccc;
 
  .container_routes{
     display:flex;
-
    
     background-position: center;
     justify-content: center; /* center the flex items along the main axis */
@@ -535,4 +534,34 @@ background-color: aliceblue;}
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
+}
+
+/*------------------- form-container ----------------*/
+.form-container{
+    background-color: rgba(240, 248, 255, 0.7);
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    height: 700px;
+    
+    
+}
+
+
+.background-form {
+    background-image: url("https://images.pexels.com/photos/552785/pexels-photo-552785.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-repeat: no-repeat;
+    background-size: cover;  
+}
+
+.custom-file-input {
+    visibility: hidden;
+    position: absolute;
+  }
+
+.custom-button {
+    display: flex; 
+    justify-content: center
 }
