@@ -3,13 +3,33 @@
 
 
 {% block content %}
+<div class="background"  >
+  <div class="container">
+    <div class="row">
+      <h1>Most recent Villach Routes</h1>
+      <div class="col-md-4">
+        
 
-<h1>Villach Routes</h1>
+        {% for route in routes %}
+          <div class="card" style="margin-bottom: 10px;">  
+            <div class="card-body">
+              <h5 class="card-title">Rider: {{ route.name }}</h5>
+              <p>Start Time: {{ route.start_time }}</p>
+              <p>End Time: {{ route.end_time }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
 
-{% for route in routes %}
-  <p>Name: {{ route.name }}</p>
-  <p>Start Time: {{ route.start_time }}</p>
-  <p>End Time: {{ route.end_time }}</p>
-{% endfor %}
-<script src="../static/script.js"></script>
+      <div class="col-md-7">
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTcR7zZ261S2sxhPtcnbGodSfbKWcVFWo&libraries=places"></script>
+
+
+<script src="../static/maps2.js"></script>
 {% endblock %}
