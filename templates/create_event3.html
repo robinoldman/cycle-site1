@@ -1,42 +1,48 @@
 {% extends "base.html" %}
 
-{% block content %}
 
-<h3>My Google Maps Demo</h3>
-<!--The div element for the map -->
-<div id="map"></div>
+
+{% block content %}
+<div class="background"  >
+    <div class="container">
+      <div class="row">
+        <h1>Bad Wortersee Route</h1>
+        <div class="col-md-6">
+            <div class="card-route" style="margin-bottom: 10px;">  
+              <div class="card-body">
+                
+                <p>The Wortersee route in the Austrian Alps offers a unique cycling experience 
+                    that is sure to leave you spellbound. As you embark on this captivating journey, 
+                    you'll be greeted by the serene beauty of the alpine terrain. The route takes 
+                    you along the shores of the picturesque Wortersee Lake, where shimmering 
+                    turquoise waters mirror the surrounding majestic mountains. <br><br>Pedaling through 
+                    charming lakeside villages, you'll be immersed in a world of tranquility 
+                    and natural splendor. The terrain varies from gentle slopes to challenging 
+                    climbs, providing a perfect balance of excitement and peacefulness. 
+                    Along the way, you'll encounter lush meadows adorned with vibrant wildflowers, 
+                    dense forests that whisper tales of ancient legends, and breathtaking viewpoints 
+                    that offer panoramic vistas of the alpine panorama. <br><br>As you indulge in the rhythm 
+                    of your cycling, you'll feel a sense of freedom and joy, surrounded by the awe-inspiring 
+                    beauty of nature. The Wortersee route is an invitation to explore the hidden treasures of 
+                    the Austrian Alps, where every pedal stroke brings you closer to a deeper connection with 
+                    the stunning landscape and a profound appreciation for the wonders of the alpine world.</p>
+                
+              </div>
+            </div>
+          
+        </div>
+
+      <div class="col-md-6">
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTcR7zZ261S2sxhPtcnbGodSfbKWcVFWo&libraries=places"></script>
 
 
-<script src="../static/maps2.js"></script>
-<form method="POST" action="{% url 'create_event3' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="button" id="currentStartTimeBtn">Insert Current Start Time</button>
-    <button type="button" id="currentEndTimeBtn">Insert Current End Time</button>
-    <button type="submit">Submit</button>
-</form>
-
-<script>
-    function getCurrentTimeWithSeconds() {
-        var now = new Date();
-        var hours = now.getHours().toString().padStart(2, '0');
-        var minutes = now.getMinutes().toString().padStart(2, '0');
-        var seconds = now.getSeconds().toString().padStart(2, '0');
-        return hours + ':' + minutes + ':' + seconds;
-    }
-
-    document.getElementById("currentStartTimeBtn").addEventListener("click", function () {
-        var currentStartTime = getCurrentTimeWithSeconds();
-        var startTimeField = document.getElementById("id_start_time");
-        startTimeField.value = currentStartTime;
-    });
-
-    document.getElementById("currentEndTimeBtn").addEventListener("click", function () {
-        var currentEndTime = getCurrentTimeWithSeconds();
-        var endTimeField = document.getElementById("id_end_time");
-        endTimeField.value = currentEndTime;
-    });
-</script>
+<script src="../static/maps1.js"></script>
 {% endblock %}
+

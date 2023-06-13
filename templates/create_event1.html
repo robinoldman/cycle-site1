@@ -1,43 +1,39 @@
 {% extends "base.html" %}
 
+
+
 {% block content %}
+<div class="background"  >
+    <div class="container">
+      <div class="row">
+        <h1>Millstatt Route</h1>
+        <div class="col-md-6">
+            <div class="card-route" style="margin-bottom: 10px;">  
+              <div class="card-body">
+                
+                <p>The Millstatt route offers a mesmerising journey through picturesque alpine landscapes, 
+                    immersing cyclists in the breathtaking beauty of the terrain. This cycling route showcases 
+                    a harmonious blend of towering mountains, lush valleys, and serene lakes, creating a captivating backdrop 
+                    at every turn. As you pedal along the route, you'll be enchanted by the pristine nature surrounding you, 
+                    with vibrant meadows, dense forests, and crystal-clear streams.<br><br> The varied terrain presents an exhilarating 
+                    challenge, with thrilling uphill climbs and thrilling downhill descents that awaken a sense of adventure. 
+                    Amidst this awe-inspiring scenery, you'll also discover charming villages and hidden gems, where you can pause 
+                    to appreciate the local culture and indulge in authentic alpine cuisine. The Millstatt route promises an 
+                    unforgettable cycling experience, where the sheer beauty of the landscape combines with the joy of pedalling, 
+                    leaving you with cherished memories and a profound appreciation for the alpine paradise.</p>
+                
+              </div>
+            </div>
+          
+        </div>
 
-<h3>My Google Maps Demo</h3>
-<!--The div element for the map -->
-<div id="map"></div>
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTcR7zZ261S2sxhPtcnbGodSfbKWcVFWo&libraries=places"></script>
-
-
-<script src="../static/maps.js"></script>
-
-<form method="POST" action="{% url 'create_event1' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="button" id="currentStartTimeBtn">Insert Current Start Time</button>
-    <button type="button" id="currentEndTimeBtn">Insert Current End Time</button>
-    <button type="submit">Submit</button>
-</form>
-
-<script>
-    function getCurrentTimeWithSeconds() {
-        var now = new Date();
-        var hours = now.getHours().toString().padStart(2, '0');
-        var minutes = now.getMinutes().toString().padStart(2, '0');
-        var seconds = now.getSeconds().toString().padStart(2, '0');
-        return hours + ':' + minutes + ':' + seconds;
-    }
-
-    document.getElementById("currentStartTimeBtn").addEventListener("click", function () {
-        var currentStartTime = getCurrentTimeWithSeconds();
-        var startTimeField = document.getElementById("id_start_time");
-        startTimeField.value = currentStartTime;
-    });
-
-    document.getElementById("currentEndTimeBtn").addEventListener("click", function () {
-        var currentEndTime = getCurrentTimeWithSeconds();
-        var endTimeField = document.getElementById("id_end_time");
-        endTimeField.value = currentEndTime;
-    });
-</script>
+      <div class="col-md-6">
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTcR7zZ261S2sxhPtcnbGodSfbKWcVFWo&libraries=places"></script>
+  <script src="../static/script.js"></script>
 {% endblock %}

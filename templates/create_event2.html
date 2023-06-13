@@ -1,42 +1,39 @@
 {% extends "base.html" %}
 
+
+
 {% block content %}
+<div class="background"  >
+    <div class="container">
+      <div class="row">
+        <h1>Bad Kleinkircheim Route</h1>
+        <div class="col-md-6">
+            <div class="card-route" style="margin-bottom: 10px;">  
+              <div class="card-body">
+                
+                <p>The Bad Kleinkircheim route invites cyclists to embark on an extraordinary journey through the enchanting 
+                    alpine landscape. This remarkable cycling route unveils a tapestry of breathtaking beauty, where rugged 
+                    mountains soar majestically, verdant valleys stretch as far as the eye can see, and crystal-clear lakes 
+                    glisten under the golden sun. The terrain presents a thrilling mix of challenges and rewards, with invigorating 
+                    uphill climbs that push your limits and exhilarating descents that set your heart racing.<br><br> Along the route, you'll 
+                    encounter hidden gems, picturesque hamlets, and cozy alpine villages, each offering a glimpse into the rich local 
+                    culture and traditions. As you pedal through this mesmerizing landscape, you'll be captivated by the ever-changing 
+                    panoramas, the soothing melodies of nature, and the invigorating scent of alpine freshness. <br><br>The Bad Kleinkircheim 
+                    route promises an unforgettable adventure, where the harmony of nature's grandeur and the joy of cycling converge, 
+                    leaving you with cherished memories and a profound connection to the captivating alpine realm.</p>
+                
+              </div>
+            </div>
+          
+        </div>
 
-<h3>My Google Maps Demo</h3>
-<!--The div element for the map -->
-<div id="map"></div>
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTcR7zZ261S2sxhPtcnbGodSfbKWcVFWo&libraries=places"></script>
-
-
-<script src="../static/maps1.js"></script>
-<form method="POST" action="{% url 'create_event2' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="button" id="currentStartTimeBtn">Insert Current Start Time</button>
-    <button type="button" id="currentEndTimeBtn">Insert Current End Time</button>
-    <button type="submit">Submit</button>
-</form>
-
-<script>
-    function getCurrentTimeWithSeconds() {
-        var now = new Date();
-        var hours = now.getHours().toString().padStart(2, '0');
-        var minutes = now.getMinutes().toString().padStart(2, '0');
-        var seconds = now.getSeconds().toString().padStart(2, '0');
-        return hours + ':' + minutes + ':' + seconds;
-    }
-
-    document.getElementById("currentStartTimeBtn").addEventListener("click", function () {
-        var currentStartTime = getCurrentTimeWithSeconds();
-        var startTimeField = document.getElementById("id_start_time");
-        startTimeField.value = currentStartTime;
-    });
-
-    document.getElementById("currentEndTimeBtn").addEventListener("click", function () {
-        var currentEndTime = getCurrentTimeWithSeconds();
-        var endTimeField = document.getElementById("id_end_time");
-        endTimeField.value = currentEndTime;
-    });
-</script>
+      <div class="col-md-6">
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTcR7zZ261S2sxhPtcnbGodSfbKWcVFWo&libraries=places"></script>
+  <script src="../static/script.js"></script>
 {% endblock %}
