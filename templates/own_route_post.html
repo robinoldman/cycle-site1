@@ -5,23 +5,29 @@
 
 
 
-        
-<div class="card-own-route">
-        {% for own_route in object_list %}
-          <div class="card" style="margin-bottom: 10px;">  
-            <div class="card-body">
-              <h5 class="card-title">Own route</h5>
-                <h1>{{ own_route.name }}</h1>
-                <p>Start Point: {{ own_route.start_point }}</p>
-                <p>End Point: {{ own_route.end_point }}</p>
-                <p>difficulty: {{ own_route.difficulty_rating }}</p>
-                <p>description: {{ own_route.description }}</p>
-                <p>image: {{ own_route.image }}</p>
-            </div>
-          </div>
-        {% endfor %}
+<div class="card-own-route background-form">
+  <div class="post-title">
+    <h3>Some of our users' favorite routes</h3>
+  </div>
+  
+  <div class="card-container">
+    {% for own_route in object_list %}
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Own route</h3>
+          <h3>{{ own_route.name }}</h3>
+          <p>Start Point: {{ own_route.start_point }}</p>
+          <p>End Point: {{ own_route.end_point }}</p>
+          <p>Difficulty: {{ own_route.difficulty_rating }}</p>
+          <p>Description: {{ own_route.description }}</p>
+          <p>Image: {{ own_route.image }}</p>
+        </div>
       </div>
+    {% endfor %}
+  </div>
 </div>
+
+
 
 <script src="../static/script.js"></script>
 {% endblock %}
