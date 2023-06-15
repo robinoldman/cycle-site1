@@ -92,6 +92,7 @@ class own_route(models.Model):
     description = models.TextField(max_length=300,)
     image = models.ImageField(default='enter image')
 
+
     def __str__(self):
         return self.name
 
