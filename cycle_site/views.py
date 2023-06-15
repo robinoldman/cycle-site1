@@ -130,7 +130,7 @@ class own_route_post(ListView):
 
 def user_route(request):
     if request.method == 'POST':
-        form = RouteForm(request.POST)
+        form = RouteForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('own_route_post',)

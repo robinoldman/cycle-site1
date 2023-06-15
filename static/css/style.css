@@ -78,7 +78,7 @@ body {
 
 .cards-heading{
 position: relative;
-padding-top: 70px;
+padding-top: 50px;
 padding-left: 70px;
 padding-right: 70px;
 font-size: 4vh;
@@ -119,6 +119,13 @@ background-color: #ccc;
 .icon-container {
     display: flex;
     justify-content: center;
+  }
+
+
+.icon-container-cards {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
   }
 /*-------------------- menu images*/
 
