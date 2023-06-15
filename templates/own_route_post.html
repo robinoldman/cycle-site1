@@ -20,7 +20,7 @@
           <p>End Point: {{ own_route.end_point }}</p>
           <p>Difficulty: {{ own_route.difficulty_rating }}</p>
           <p>Description: {{ own_route.description }}</p>
-          <p>Image: {{ own_route.image }}</p>
+          <p><img src=" {{ own_route.image.url}}" width="100%"></p>
         </div>
       </div>
     {% endfor %}
