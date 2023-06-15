@@ -147,11 +147,9 @@ class PostList(generic.ListView):
 
 
 def map_view(request):
-    return render(request, 'map.html')
+    return render(request, 'main.html')
 
 
-def set_routes(request):
-    return render(request, 'set_routes.html')
 
 
 class PostDetail(View):

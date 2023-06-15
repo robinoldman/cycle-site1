@@ -1,13 +1,13 @@
 from . import views
 from django.urls import path
 from .views import event_detail
-from .views import set_routes
+
 from .views import millstatt_routes, villach_routes, wortersee_routes, badkleinkircheim_routes, team_page, user_route
 
 
 urlpatterns = [
     path("", views.PostList.as_view(), name="home"),
-    path('map/', views.map_view, name='map'),
+    path('main/', views.map_view, name='main'),
     path('create_event1/', views.create_event1, name='create_event1'),
     path('create_event2/', views.create_event2, name='create_event2'),
     path('create_event3/', views.create_event3, name='create_event3'),
@@ -22,7 +22,6 @@ urlpatterns = [
     path('villach-routes/', villach_routes, name='villach'),
     path('wortersee-routes/', wortersee_routes, name='wortersee'),
     path('badkleinkircheim-routes/', badkleinkircheim_routes, name='badkleinkircheim'),
-    path('set_routes/', views.set_routes, name='set_routes'),
     path('team/', team_page, name='team'),
     path('own_route_post/', views.own_route_post.as_view(), name='own_route_post'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
