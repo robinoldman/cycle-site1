@@ -7,7 +7,7 @@
       <form method="POST"  action="{% url 'user_route' %}" enctype="multipart/form-data">
          {% csrf_token %}
 
-         <div class='own-route-intro'>Found a new route and want to share it? No problem enter the name start and end point as well as your image to share iwth our community</div>
+         <div class='own-route-intro'>Found a new route and want to share it? No problem, enter the route name, start and end point, as well as your image to share with our community</div>
          <div class="col-md-6">
           <label for="id_name" class="form-group"></label>
           <input type="text" id="id_name" name="name" class="form-control" placeholder="Route Name">
