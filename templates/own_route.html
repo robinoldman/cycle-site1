@@ -3,37 +3,42 @@
 {% block content %}
 
 <div class="background-form">
-  <div class="form-container">
-     <form method="POST"  action="{% url 'user_route' %}" enctype="multipart/form-data">
-        {% csrf_token %}
-        <div  class="col-md-6">
-         <label for="id_name"class="form-group">name:</label>
-         {{ form.name }}
-      </div>
-        <div  class="col-md-6">
-           <label for="id_start_point"class="form-group">Start Point:</label>
-           {{ form.start_point }}
-        </div>
-        <div  class="col-md-6">
-           <label for="id_end_point"class="form-group">End Point:</label>
-           {{ form.end_point }}
-        </div>
-        <div  class="col-md-6">
-           <label for="id_difficulty_rating"class="form-group">Difficulty:</label>
-           {{ form.difficulty_rating }}
-        </div>
-        <div class="col-md-12">
-           <label for="id_description" class="form-group" >Description:</label>
-           {{ form.description }}
-        </div>
-        <div class="form-group">
-         <label for="id_image">Image:</label>
-         {{ form.image }}
+   <div class="form-container">
+      <form method="POST"  action="{% url 'user_route' %}" enctype="multipart/form-data">
+         {% csrf_token %}
+
+         <div class='own-route-intro'>Found a new route and want to share it? No problem enter the name start and end point as well as your image to share iwth our community</div>
+         <div class="col-md-6">
+          <label for="id_name" class="form-group"></label>
+          <input type="text" id="id_name" name="name" class="form-control" placeholder="Route Name">
        </div>
-       <button type="submit">Submit</button>
-     </form>
-  </div>
-</div>
+         <div class="col-md-6">
+            <label for="id_start_point" class="form-group"></label>
+            <input type="text" id="id_start_point" name="start_point" class="form-control" placeholder="Start point">
+         </div>
+         <div class="col-md-6">
+            <label for="id_end_point" class="form-group"></label>
+            <input type="text" id="id_end_point" name="end_point" class="form-control" placeholder="End point">
+         </div>
+         <div class="col-md-6">
+            <label for="id_difficulty_rating" class="form-group"></label>
+            <input type="text" id="id_difficulty_rating" name="difficulty_rating" class="form-control" placeholder="Difficulty rating">
+         </div>
+         <div class="col-md-12">
+            <label for="id_description" class="form-group"></label>
+            <textarea id="id_description" name="description" class="form-control" placeholder="Enter the description"></textarea>
+         </div>
+         <div class="form-group">
+          <label for="id_image"></label>
+          <input type="file" id="id_image" name="image" class="form-control">
+        </div>
+        <div id="form-submit" class="form-group text-center">
+        <button type="button" id="Submit-route-form" class="btn btn-success">Submit</button>
+        </div>
+      </form>
+   </div>
+ </div>
+ 
 
 {% endblock %}
 

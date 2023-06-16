@@ -589,22 +589,34 @@ background-color: aliceblue;}
 
 /*------------------- form-container ----------------*/
 .form-container{
-    background-color: rgba(240, 248, 255, 0.7);
+    
     margin: 50px auto 20px;
     max-width: 500px;
     padding: 20px;
-    border: 1px solid #ccc;
+    font-family: Lato, sans-serif;
+    color: #ccc;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 50px;
+    text-align: center;
+   
 
    
     
     
 }
 
+#form-submit{
+    padding: 20px;
+}
+
+.own-route-intro{
+    color: white;
+    font-size: 25px;
+    
+    font-family: Lato, sans-serif;
+}
 
 .background-form {
     background-image: url("https://images.pexels.com/photos/552785/pexels-photo-552785.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
@@ -616,16 +628,6 @@ background-color: aliceblue;}
 }
 
 
-.custom-file-input {
-    visibility: hidden;
-    position: absolute;
-  }
-
-.custom-button {
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-}
 
 /*------------------- own route return -container ----------------*/
 
