@@ -464,6 +464,25 @@ background-color: #ccc;
 pointer-events: none;
 }
 
+#difficult-button{
+position: absolute;
+top: 55px;
+left: 25px;}
+
+#distance-button{
+    position: absolute;
+    top: 125px;
+    left: 25px;}
+
+#distance-heading{
+    position: absolute;
+    top: 90px;
+    left: 15px;}
+
+@media (max-width: 480px){
+    .panels-info{
+            display: none;
+        }}
 
 @media (max-width: 480px){
     .container_students{
