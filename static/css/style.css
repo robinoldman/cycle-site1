@@ -356,6 +356,10 @@ background-color: #ccc;
 
  }
 
+#route-details{
+    font-size: 2vh;
+}
+
  .container_routes::after
  {content: "";
 position: absolute;
@@ -607,6 +611,7 @@ background-color: aliceblue;}
     background-repeat: repeat;
     background-size: cover;  
     background-position: relative;
+    height: 1100px;
 
 }
 
