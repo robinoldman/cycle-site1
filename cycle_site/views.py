@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 #from .models import Post
 #from .forms import CommentForm
-from .models import Event
+#from .models import Event
 #from .forms import CreateEventForm
 #from .forms import CreateEventForm1
 #from .forms import CreateEventForm2
@@ -12,9 +12,9 @@ from .models import own_route
 from .forms import RouteForm
 from django.contrib import messages
 from django.views.generic.list import ListView
-from .models import Event1
-from .models import Event2
-from .models import Event3
+#from .models import Event1
+#from .models import Event2
+#from .models import Event3
 from .forms import CreateRoute
 from .models import Route
 from .models import RouteComment

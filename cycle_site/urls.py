@@ -6,6 +6,8 @@ from .views import millstatt_routes, villach_routes, wortersee_routes, badkleink
 urlpatterns = [
    #event_detail #PostDetail
    # path("", views.PostList.as_view(), name="home"),
+   path("", views.map_view, name='main'),
+
     path('main/', views.map_view, name='main'),
     path('create_event1/', views.create_event1, name='create_event1'),
     path('create_event2/', views.create_event2, name='create_event2'),

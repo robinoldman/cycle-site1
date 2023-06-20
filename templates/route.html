@@ -2,21 +2,81 @@
 
 {% block content %}
 
-<h3>My Google Maps Demo</h3>
-<!--The div element for the map -->
-<div id="map"></div>
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTcR7zZ261S2sxhPtcnbGodSfbKWcVFWo&libraries=places"></script>
 
 
-<script src="../static/script.js"></script>
+
+
+
 <form method="POST" action="{% url 'route' %}">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="button" id="currentStartTimeBtn">Insert Current Start Time</button>
-    <button type="button" id="currentEndTimeBtn">Insert Current End Time</button>
-    <button type="submit">Submit</button>
-</form>
+    <div class="background-form">
+    <div class="own-route-intro">
+      Type in your route start time and end time. Cant be bothered to type in you time? 
+      No worries just hit our 'start time' button when you set off and hit the 'stop time' when you 
+      reach your destination to see how you compare to others! 
+    </div>
+    
+    <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6 mb-2">
+            <label for="id_name" class="form-group"></label>
+            <input type="text" id="id_name" name="name" class="form-control" placeholder="Route Name">
+          </div>
+        </div>
+      
+        <div class="row justify-content-center">
+          <div class="col-md-6 mb-2">
+            <label for="id_start_time" class="form-group"></label>
+            <input type="time" id="id_start_time" name="start_time" class="form-control">
+          </div>
+        </div>
+      
+        <div class="row justify-content-center">
+          <div class="col-md-6 mb-2">
+            <label for="id_end_time" class="form-group"></label>
+            <input type="time" id="id_end_time" name="end_time" class="form-control">
+          </div>
+        </div>
+      
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <label for="id_route" class="form-group"></label>
+            <select id="id_route" name="route" class="form-control">
+              <option value="milstatt">Milstatt</option>
+              <option value="bad_kleikircheim">Bad Kleikircheim</option>
+              <option value="villach">Villach</option>
+              <option value="wortersee">Wortersee</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+      
+    
+    <div id="form-submit" class="form-group text-center">
+      <button type="button" id="currentStartTimeBtn" class="btn btn-success">Insert Current Start Time</button>
+      <button type="button" id="currentEndTimeBtn" class="btn btn-success">Insert Current End Time</button>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+    
+  </form>
+  
+
+
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div id="map"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTcR7zZ261S2sxhPtcnbGodSfbKWcVFWo&libraries=places"></script>
+      </div>
+    </div>
+  </div>
+<script src="../static/script.js"></script>
+
 
 <script>
     function getCurrentTimeWithSeconds() {

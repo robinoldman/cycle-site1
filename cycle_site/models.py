@@ -74,7 +74,7 @@ class RouteComment(models.Model):
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
 
-
+'''
 class Event(models.Model):
     name = models.CharField(max_length=80, default='enter name')
     start_time = models.TimeField()
@@ -111,7 +111,7 @@ class Event3(models.Model):
     def __str__(self):
         return self.name
 
-
+'''
 
 
 
