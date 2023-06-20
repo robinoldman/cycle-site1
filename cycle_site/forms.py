@@ -6,6 +6,13 @@ from .models import Event1
 from .models import Event2
 from .models import Event3
 from .models import Route
+from .models import RouteComment
+
+
+class RouteComment(forms.ModelForm):
+    class Meta:
+        model = RouteComment
+        fields = ('body',)
 
 
 class CommentForm(forms.ModelForm):

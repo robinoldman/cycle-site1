@@ -7,6 +7,7 @@ from .forms import CreateEventForm
 from .forms import CreateEventForm1
 from .forms import CreateEventForm2
 from .forms import CreateEventForm3
+from .forms import RouteComment
 from .models import own_route
 from .forms import RouteForm
 from django.contrib import messages
@@ -16,6 +17,7 @@ from .models import Event2
 from .models import Event3
 from .forms import CreateRoute
 from .models import Route
+from .models import RouteComment
 
 def logRoute(request):
     if request.method == 'POST':
@@ -149,7 +151,43 @@ class PostList(generic.ListView):
 def map_view(request):
     return render(request, 'main.html')
 
+from django.shortcuts import redirect
 
+class PostDetailRoute(View):
+
+    def get(self, request, slug, *args, **kwargs):
+        
+        post = get_object_or_404(own_route, slug=slug)
+        comments = post.route_comments.filter(approved=True).order_by("-created_on")
+        liked = False
+        #if post.likes.filter(id=self.request.user.id).exists():
+         #   liked = True
+
+        return render(
+            request,
+            "post_comments.html",
+            {
+                "post": post,
+                "comments": comments,
+                "commented": False,
+                "liked": liked,
+                "comment_form": RouteComment()
+            },
+        )
+    
+    def post(self, request, slug, *args, **kwargs):
+        
+        submitted_data = request.POST  
+        
+        
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.post = get_object_or_404(Post, slug=slug)
+            comment.user = request.user
+            comment.save()
+        
+        return redirect("post-detail", slug=slug)
 
 
 class PostDetail(View):

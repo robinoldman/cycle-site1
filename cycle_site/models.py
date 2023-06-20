@@ -46,6 +46,34 @@ class Comment(models.Model):
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
 
+class own_route(models.Model):
+    name = models.CharField(max_length=80, )
+    slug = models.SlugField(max_length=200, unique=True, default='new-default') 
+    start_point = models.CharField(max_length=80, )
+    end_point = models.CharField(max_length=80, )
+    difficulty_rating = models.CharField(max_length=80, )
+    description = models.TextField(max_length=300,)
+    image = models.ImageField(default='enter image')
+
+
+    def __str__(self):
+        return self.name
+
+class RouteComment(models.Model):
+    post = models.ForeignKey(own_route, on_delete=models.CASCADE,
+                             related_name="route_comments")
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.name}"
+
 
 class Event(models.Model):
     name = models.CharField(max_length=80, default='enter name')
@@ -84,17 +112,8 @@ class Event3(models.Model):
         return self.name
 
 
-class own_route(models.Model):
-    name = models.CharField(max_length=80, default='enter name')
-    start_point = models.CharField(max_length=80, )
-    end_point = models.CharField(max_length=80, )
-    difficulty_rating = models.CharField(max_length=80, )
-    description = models.TextField(max_length=300,)
-    image = models.ImageField(default='enter image')
 
 
-    def __str__(self):
-        return self.name
 
 
 class Route(models.Model):

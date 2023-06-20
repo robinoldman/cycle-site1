@@ -1,0 +1,32 @@
+{{post.title}}
+{post.content}
+
+{% for comment in comments %}
+<p>{{ comment.body }}</p>
+<p>by {{ coment.name }}</p>
+{% empty %}
+
+{% endfor %}
+
+
+<form method="post">
+    {% csrf_token %}
+    {{ comment_form.as_p }}
+    <button type="submit"> submit </button>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
