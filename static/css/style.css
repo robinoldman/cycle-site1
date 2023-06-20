@@ -470,13 +470,13 @@ pointer-events: none;
 
 #difficult-button{
 position: absolute;
-top: 55px;
-left: 25px;}
+top: 70px;
+left: 35px;}
 
 #distance-button{
     position: absolute;
-    top: 125px;
-    left: 25px;}
+    top: 140px;
+    left: 35px;}
 
 #distance-heading{
     position: absolute;
@@ -500,17 +500,8 @@ left: 25px;}
     }
 }
 
-@media (max-width: 1100px){
-    .panel h3{
-        font-size: 18px ;
-        padding: 10px;}
-    .panel h4{
-            font-size: 14px ;
-            padding: 10px;
-}
 
-}
-    
+
 
 @media (max-width: 445px){
     .panel h3{
