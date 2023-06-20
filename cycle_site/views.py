@@ -1,12 +1,12 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
-from .models import Post
-from .forms import CommentForm
+#from .models import Post
+#from .forms import CommentForm
 from .models import Event
-from .forms import CreateEventForm
-from .forms import CreateEventForm1
-from .forms import CreateEventForm2
-from .forms import CreateEventForm3
+#from .forms import CreateEventForm
+#from .forms import CreateEventForm1
+#from .forms import CreateEventForm2
+#from .forms import CreateEventForm3
 from .forms import RouteComment
 from .models import own_route
 from .forms import RouteForm
@@ -25,7 +25,7 @@ def logRoute(request):
         if form.is_valid():
             form.save()
             messages.success(request, "This is a success message.")
-            return redirect('event_detail')
+            return redirect('main')
     else:
         form = CreateRoute()
     
@@ -52,58 +52,23 @@ def villach_routes(request):
 def team_page(request):
     return render(request, 'team.html')
 
-def create_event(request):
-    if request.method == 'POST':
-        form = CreateEventForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "This is a success message.")
 
-            return redirect('event_detail',)
-    else:
-        form = CreateEventForm()
-    return render(request, 'create_event.html', {'form': form})
+def create_event(request):
+    return redirect('create_event')
 
 
 def create_event1(request):
-    if request.method == 'POST':
-        form = CreateEventForm1(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "This is a success message.")
-
-            return redirect('event_detail1',)
-    else:
-        form = CreateEventForm1()
-    return render(request, 'create_event1.html', {'form': form})
-
+   return redirect('create_event1')
+ 
 
 def create_event2(request):
-    if request.method == 'POST':
-        form = CreateEventForm2(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "This is a success message.")
-
-            return redirect('event_detail2',)
-    else:
-        form = CreateEventForm2()
-    return render(request, 'create_event2.html', {'form': form})
-
+    return redirect('create_event2')
 
 def create_event3(request):
-    if request.method == 'POST':
-        form = CreateEventForm3(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "This is a success message.")
-
-            return redirect('event_detail3',)
-    else:
-        form = CreateEventForm3()
-    return render(request, 'create_event3.html', {'form': form})
+    return redirect('create_event3')
 
 
+'''
 class event_detail(ListView):
     model = Event
     template_name = "event_detail.html"
@@ -122,7 +87,7 @@ class event_detail2(ListView):
 class event_detail3(ListView):
     model = Event3
     template_name = "event_detail3.html"
-
+'''
 
 class own_route_post(ListView):
     model = own_route
@@ -140,14 +105,14 @@ def user_route(request):
     form = RouteForm()
     return render(request, 'own_route.html', {'form': form})
 
-
+'''
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
     paginate_by = 6
 
-
+'''
 def map_view(request):
     return render(request, 'main.html')
 
@@ -174,8 +139,8 @@ class PostDetailRoute(View):
                 "comment_form": RouteComment()
             },
         )
-    
-    def post(self, request, slug, *args, **kwargs):
+'''
+def post(self, request, slug, *args, **kwargs):
         
         submitted_data = request.POST  
         
@@ -211,3 +176,4 @@ class PostDetail(View):
                 "comment_form": CommentForm()
             },
         )
+'''
