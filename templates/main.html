@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<!-- hero section  -->
 <section class="hero">
    <div class="hero-inner">
       <img src="https://images.pexels.com/photos/544067/pexels-photo-544067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Austria Image">
@@ -13,6 +14,7 @@
 
 <div class="container-lg my-5">
       <div class="row">
+         <!-- user route for user to create and publish own route  -->
          <div class="col-12 col-md-6  mb-4">
             <a href="{% url 'user_route' %}">
                <div class="text-light image-container">
@@ -23,26 +25,30 @@
                </div>
             </a>
          </div>
+
+         <!-- user can log their own time -->
          <div class="col-12 col-md-6  mb-4">
-            <a href="{% url 'user_route' %}">
+            <a href="{% url 'route' %}">
                <div class="text-light image-container">
                   <img class="menu-image" src="https://images.pexels.com/photos/1208777/pexels-photo-1208777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Austria Image">
                   <div class="overlay">
-                     <div class="overlay-content">learn more about the area</div>
+                     <div class="overlay-content">log your time</div>
                   </div>
                </div>
             </a>
          </div>
+         <!-- ability to see all route maps  -->
          <div class="col-12 col-md-6 mb-4">
             <a href="{% url 'user_route' %}">
                <div class="text-light image-container">
                   <img class="menu-image" src="https://images.pexels.com/photos/552785/pexels-photo-552785.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Austria Image">
                   <div class="overlay">
-                     <div class="overlay-content">contact us</div>
+                     <div class="overlay-content">route maps</div>
                   </div>
                </div>
             </a>
          </div>
+         <!-- see the team behind the company -->
          <div class="col-12 col-md-6 mb-4">
             <a href="{% url 'team' %}">
                <div class="text-light image-container">
@@ -58,11 +64,11 @@
    
 
 </div><div class="color-block1">
-   
+   <!-- cards for each set route -->
    <div class="icon-container-cards">
       <i class="fa-solid fa-bicycle"></i>
    </div>
-
+  <!-- card for Millstattt route includes link for route info, log time and look at previous times  -->
   <div class="cards-heading"> Discover our free planned routes! Each route is graded from easy to hard, offering stunning views. Get route information, time your own progress, and compare with others. Start exploring today!</div>
 <div class="container_routes">
       <div class="panel active" style="background-image: url('https://images.pexels.com/photos/1687122/pexels-photo-1687122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')">
@@ -83,6 +89,7 @@
          </div>
          <div class="overlay-routes"></div>
       </div>
+      <!-- card for Wortersee route includes link for route info, log time and look at previous times  -->
       <div class="panel" style="background-image: url('https://images.pexels.com/photos/1686302/pexels-photo-1686302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')">
          <h3>Wortersee</h3>
          <div class="panels-info">
@@ -100,6 +107,7 @@
          </div>
          <div class="overlay-routes"></div>
       </div>
+      <!-- card for Bad Kleinkirchem route includes link for route info, log time and look at previous times  -->
       <div class="panel" style="background-image: url('https://images.pexels.com/photos/1428787/pexels-photo-1428787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')">
          <div class="panels-info">
          <h3>Bad Kleinkircheim</h3>
@@ -118,6 +126,7 @@
          </div>
          <div class="overlay-routes"></div>
       </div>
+      <!-- card for Villach route includes link for route info, log time and look at previous times  -->
       <div class="panel" style="background-image: url('https://images.pexels.com/photos/2737232/pexels-photo-2737232.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)">
          <div class="panels-info">
          <h3>Villach</h3>
