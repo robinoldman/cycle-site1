@@ -1,12 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
-
 from .forms import RouteComment
 from .models import own_route
 from .forms import RouteForm
 from django.contrib import messages
 from django.views.generic.list import ListView
-
 from .forms import CreateRoute
 from .models import Route
 from .models import RouteComment
@@ -97,7 +95,7 @@ def create_event1(request):
     Redirects to the create_event1 page.
     """
 
-   return redirect('create_event1')
+    return redirect('create_event1')
  
 
 def create_event2(request):
@@ -126,9 +124,9 @@ class own_route_post(ListView):
     using the own_route_post.html template.
     """
 
-    model = own_route
-    template_name = "own_route_post.html"
-    paginate_by = 6
+model = own_route
+template_name = "own_route_post.html"
+paginate_by = 6
 
 
 def user_route(request):
