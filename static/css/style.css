@@ -263,6 +263,18 @@ background-color: #ccc;
     background-color: #23BBBB;
     color: #fff;
 }
+#currentEndTimeBtn {
+    margin-top: 15px;
+
+}
+
+#currentStartTimeBtn{
+    margin-top: 15px;
+}
+
+#btn-success{
+    margin-top: 15px;
+}
 
 .btn-signup:hover,
 .btn-signup:active {
@@ -598,6 +610,14 @@ background-color: aliceblue;}
     
 }
 
+/*----------set route*/
+
+#time-input{
+    padding: 1px;
+    padding-left: 20px ;
+    padding-right: 20px ;
+}
+
 #own_route_form{
     padding: 1px;
 }
@@ -605,6 +625,7 @@ background-color: aliceblue;}
 #form-submit{
     padding: 20px;
 }
+
 
 .own-route-intro{
     color: black;
@@ -622,6 +643,9 @@ background-color: aliceblue;}
 
 }
 
+@media (max-width: 470px){.own-route-intro{
+display: none;
+}}
 
 
 /*------------------- own route return -container ----------------*/
