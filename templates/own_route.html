@@ -2,36 +2,44 @@
 
 {% block content %}
 
+
+
 <div id="own_route_form" class="background-form">
    <div class="form-container">
       <form method="POST"  action="{% url 'user_route' %}" enctype="multipart/form-data">
          {% csrf_token %}
-
+         <!-- input for entering name-->
          <div class='own-route-intro'>Found a new route and want to share it? No problem, enter the route name, start and end point, as well as your image to share with our community</div>
          <div class="col-md-6">
           <label for="id_name" class="form-group"></label>
           <input type="text" id="id_name" name="name" class="form-control" placeholder="Route Name">
        </div>
+         <!-- input for entering start point -->
          <div class="col-md-6">
             <label for="id_start_point" class="form-group"></label>
             <input type="text" id="id_start_point" name="start_point" class="form-control" placeholder="Start point">
          </div>
+         <!-- input for entering end point -->
          <div class="col-md-6">
             <label for="id_end_point" class="form-group"></label>
             <input type="text" id="id_end_point" name="end_point" class="form-control" placeholder="End point">
          </div>
+         <!-- input for entering difficulty rating -->
          <div class="col-md-6">
             <label for="id_difficulty_rating" class="form-group"></label>
             <input type="text" id="id_difficulty_rating" name="difficulty_rating" class="form-control" placeholder="Difficulty rating">
          </div>
+         <!-- input for entering description -->
          <div class="col-md-12">
             <label for="id_description" class="form-group"></label>
             <textarea id="id_description" name="description" class="form-control" placeholder="Enter the description"></textarea>
          </div>
+         <!-- input for entering image -->
          <div class="form-group">
           <label for="id_image"></label>
           <input type="file" id="id_image" name="image" class="form-control">
         </div>
+        <!--submit button -->
         <div id="form-submit" class="form-group text-center">
         <button type="submit" id="Submit-route-form" class="btn btn-success">Submit</button>
         </div>

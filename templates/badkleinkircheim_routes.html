@@ -1,22 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- This block represents the contnt section of the template -->
+<!-- contnt section of the template -->
 
 <div class="background">
-  <!-- Background section -->
+ 
   <div class="container">
-    <!-- Container div for content algnment -->
+   
     <div class="row">
-      <!-- Row div for layot -->
+      
 
-      <!-- Heading for displaing the most recent Bad Kleinkircheim Routes -->
+     
       <h1>Most recent Bad Kleinkircheim Routess</h1>
 
       <div class="col-md-4">
-        <!-- Column div for displaing route cards -->
+       
         
-        <!-- Loop through each route and display a card -->
+        <!-- view saved routes from the 'Badkleinkirchem ' route. See start ime and end time -->
         {% for route in routes %}
           <div class="card" style="margin-bottom: 10px;">  
             <div class="card-body">

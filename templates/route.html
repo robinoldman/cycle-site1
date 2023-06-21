@@ -8,6 +8,7 @@
 
 
 <form method="POST" action="{% url 'route' %}">
+  <!-- title explaining how to use the page-->
     {% csrf_token %}
     <div class="background-form">
     <div class="own-route-intro">
@@ -16,6 +17,7 @@
       reach your destination to see how you compare to others! 
     </div>
     
+    <!-- input for entering name -->
     <div id="time-input" class="container">
         <div class="row justify-content-center">
           <div class="col-md-6 mb-2">
@@ -23,21 +25,22 @@
             <input type="text" id="id_name" name="name" class="form-control" placeholder="Route Name">
           </div>
         </div>
-      
+        <!-- input for entering start time -->
         <div id="time-input" class="row justify-content-center">
           <div class="col-md-6 mb-2">
             <label for="id_start_time" class="form-group"></label>
             <input type="time" id="id_start_time" name="start_time" class="form-control">
           </div>
         </div>
-      
+
+        <!-- input for entering end time -->
         <div id="time-input" class="row justify-content-center">
           <div class="col-md-6 mb-2">
             <label for="id_end_time" class="form-group"></label>
             <input type="time" id="id_end_time" name="end_time" class="form-control">
           </div>
         </div>
-      
+      <!-- input for entering route drop down menu -->
         <div id="time-input" class="row justify-content-center">
           <div class="col-md-6">
             <label for="id_route" class="form-group"></label>
@@ -55,7 +58,8 @@
       
       
       
-      
+      <!-- subit button and start and end time button. 
+        Press the start time and the start time will be filled with the current time -->
     
     <div id="form-submit" class="form-group text-center">
       <button type="button" id="currentStartTimeBtn" class="btn btn-success">Insert Current Start Time</button>
@@ -66,7 +70,7 @@
     
   </form>
   
-
+<!-- map of route -->
 
 <div class="container">
     <div class="row justify-content-center">
@@ -78,7 +82,8 @@
   </div>
 <script src="../static/script.js"></script>
 
-
+<!-- Javascript for setting the start time and end time buttons. 
+  Press the start time and the start time will be filled with the current time-->
 <script>
     function getCurrentTimeWithSeconds() {
         var now = new Date();
