@@ -153,8 +153,8 @@ background-color: #ccc;
 
 .overlay
 {display: flex;
-    justify-content: center; /* Horizontal centering */
-    align-items: center; /* Vertical centering */}
+    justify-content: center; /
+    align-items: center; }
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
@@ -259,6 +259,8 @@ background-color: #ccc;
     color: lightgray;
 }
 
+/*-------------------- buttons */
+
 .btn-signup {
     background-color: #23BBBB;
     color: #fff;
@@ -305,7 +307,7 @@ background-color: #ccc;
     background: transparent;
     border: none;
 }
-
+/*-------------------- map */
 #map {
     width:100%;
     height: 400px;
@@ -472,7 +474,6 @@ background-color: #ccc;
 
 .btn{
     z-index: 1;
-
 }
 
 .panel:not(.active) .btn{
@@ -548,9 +549,6 @@ left: 35px;}
 
 }
 
-
-
-/*-----------card for returned route data */
 .card-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -572,9 +570,7 @@ background-color: aliceblue;}
    
 }
 
-
-
-
+ffc
 .container h1 {
     margin-bottom:  50px;
 }
