@@ -119,14 +119,14 @@ def create_event3(request):
 
 class own_route_post(ListView):
  
- """
+    """
     Displays a paginated list of own_route objects
     using the own_route_post.html template.
     """
 
-model = own_route
-template_name = "own_route_post.html"
-paginate_by = 6
+    model = own_route
+    template_name = "own_route_post.html"
+    paginate_by = 6
 
 
 def user_route(request):

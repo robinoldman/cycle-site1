@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path
-from .views import millstatt_routes, villach_routes, wortersee_routes, badkleinkircheim_routes, team_page, user_route, PostDetailRoute
+from .views import millstatt_routes, villach_routes, wortersee_routes, badkleinkircheim_routes, team_page, user_route, PostDetailRoute, own_route_post
 
 
 urlpatterns = [
