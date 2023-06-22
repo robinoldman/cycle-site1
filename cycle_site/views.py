@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
-from .forms import RouteComment
+from .forms import RouteCommentForm
 from .models import own_route
 from .forms import RouteForm
 from django.contrib import messages
@@ -83,19 +83,17 @@ def team_page(request):
 def create_event(request):
 
     """
-    Redirects to the create_event page.
+    Renders to the create_event page.
     """
 
-    return redirect('create_event')
-
+    return render (request, 'create_event.html')
+    
 
 def create_event1(request):
+    return render(request, 'create_event1.html')
 
-    """
-    Redirects to the create_event1 page.
-    """
 
-    return redirect('create_event1')
+
  
 
 def create_event2(request):
@@ -104,7 +102,7 @@ def create_event2(request):
     Redirects to the create_event2 page.
     """
 
-    return redirect('create_event2')
+    return render( request, 'create_event2.html')
 
 def create_event3(request):
      
@@ -112,7 +110,7 @@ def create_event3(request):
     Redirects to the create_event3 page.
     """
 
-    return redirect('create_event3')
+    return render(request,  'create_event3.html')
 
 
 
@@ -133,7 +131,7 @@ def user_route(request):
 
     """
     Handles the creation of a user route.
-    If the request method is POST and the form is valid, saves the form data
+    If request method is POST and the form is valid, saves the form data
     and redirects to the own_route_post page.
     Otherwise, renders the own_route.html template with the form.
     """
@@ -155,6 +153,8 @@ def map_view(request):
     """
 
     return render(request, 'main.html')
+
+
 
 
 
@@ -182,9 +182,42 @@ class PostDetailRoute(View):
                 "comments": comments,
                 "commented": False,
                 "liked": liked,
-                "comment_form": RouteComment()
+                "comment_form": RouteCommentForm()
             },
         )
+
+    def post(self, request, slug, *args, **kwargs):
+        
+        post = get_object_or_404(own_route, slug=slug)
+        comments = post.route_comments.filter(approved=True).order_by("-created_on")
+        liked = False
+        #if post.likes.filter(id=self.request.user.id).exists():
+         #   liked = True
+
+        comment_form = RouteCommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.post = get_object_or_404(own_route, slug=slug)
+            comment.user = request.user
+            comment.save()
+
+        else: 
+            comment_form = RouteCommentForm()
+        
+        return redirect("user_route", )
+
+        if comment_form.is_valid():
+            return render(
+                request,
+                "post_comments.html",
+                {
+                    "post": post,
+                    "comments": comments,
+                    "commented": True,
+                    "liked": liked,
+                    "comment_form": RouteCommentForm()
+                },
+            )
 '''
 def post(self, request, slug, *args, **kwargs):
         
@@ -197,6 +230,7 @@ def post(self, request, slug, *args, **kwargs):
             comment.post = get_object_or_404(Post, slug=slug)
             comment.user = request.user
             comment.save()
+        
         
         return redirect("post-detail", slug=slug)
 

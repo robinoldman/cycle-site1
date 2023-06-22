@@ -4,6 +4,7 @@ from .models import Route
 from .models import RouteComment
 
 
+
 class CreateRoute(forms.ModelForm):
     """
     Form for creating a Route object.
@@ -12,7 +13,7 @@ class CreateRoute(forms.ModelForm):
         model = Route
         fields = '__all__'
 
-class RouteComment(forms.ModelForm):
+class RouteCommentForm(forms.ModelForm):
     """
     Form for creating a RouteComment object.
     """
@@ -35,7 +36,7 @@ class RouteForm(forms.ModelForm):
 #from .models import Event3
 '''
 class CommentForm(forms.ModelForm):
-    class Met#from .models import Eventa:
+    class Meta:
         model = Comment
         fields = ('body',)
 '''
