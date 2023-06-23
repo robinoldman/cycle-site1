@@ -12,10 +12,13 @@ class CreateRoute(forms.ModelForm):
     start_point = forms.CharField(max_length=100, required=True)
     end_point = forms.CharField(max_length=100, required=True)
     name = forms.CharField(max_length=100, required=True)
+    difficulty_rating = forms.CharField(max_length=80)
+    description = forms.CharField(max_length=300)
+    
 
     class Meta:
         model = own_route
-        fields = ['start_point', 'end_point', 'name']
+        fields = ['start_point', 'end_point', 'name', 'description', 'image']
         exclude = ['slug']
 
 class RouteCommentForm(forms.ModelForm):
