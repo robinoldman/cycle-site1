@@ -38,7 +38,6 @@ class RouteComment(models.Model):
     """
     post = models.ForeignKey(own_route, on_delete=models.CASCADE, related_name="route_comments")
     name = models.CharField(max_length=80)
-    email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)

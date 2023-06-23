@@ -216,13 +216,13 @@ class PostDetailRoute(View):
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
             comment.post = get_object_or_404(own_route, slug=slug)
-            comment.user = request.user
+            comment.name = request.user
             comment.save()
 
         else: 
             comment_form = RouteCommentForm()
         
-        return redirect("own_route", )
+        return redirect("own_route_post", )
 
         if comment_form.is_valid():
             return render(
