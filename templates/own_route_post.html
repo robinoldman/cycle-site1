@@ -16,12 +16,14 @@
         <div class="card-body">
           
           <h3>{{ own_route.name }}</h3>
-         
+          
           <p>Start Point: {{ own_route.start_point }}</p>
           <p>End Point: {{ own_route.end_point }}</p>
           <p>Difficulty: {{ own_route.difficulty_rating }}</p>
           <p>Description: {{ own_route.description }}</p>
           <p><img src=" {{ own_route.image.url}}" width="100%"></p>
+          
+            
         
                 
         </div>
@@ -30,24 +32,7 @@
   </div>
 </div>
 
-  <div class="col-md-4 card mb-4  mt-3 ">
-            <div class="card-body">
-                <!-- -->
-                {% if commented %}
-                <div class="alert alert-success" role="alert">
-                    Your comment is awaiting approval
-                </div>
-                {% else %}
-                
-                <!-- section for posting route including name place difficulty descriuption and image upload -->
-                <h3>Leave a comment:</h3>
-                <p>Posting as: {{ user.username }}</p>
-                <form method="post" style="margin-top: 1.3em;">
-                    {{ comment_form | crispy }}
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                </form>
-                {% endif %}
+
 
 <script src="../static/script.js"></script>
 {% endblock %}

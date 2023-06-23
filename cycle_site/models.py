@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.template.defaultfilters import slugify
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -11,7 +12,7 @@ class own_route(models.Model):
     Represents a user-defined route.
     """
     name = models.CharField(max_length=80)
-    slug = models.SlugField(max_length=200, unique=True, default='new-default')
+    slug = models.SlugField(max_length=200, unique=True, null=False)  # Include the slug field
     start_point = models.CharField(max_length=80)
     end_point = models.CharField(max_length=80)
     difficulty_rating = models.CharField(max_length=80)
@@ -19,10 +20,17 @@ class own_route(models.Model):
     image = models.ImageField(default='enter image')
 
     def __str__(self):
-        """
-        Returns a string representation of the own_route object.
-        """
         return self.name
+
+    def get_absolute_url(self):
+        return reverse("route_detail", kwargs={"slug": self.slug})
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        return super().save(*args, **kwargs)
+
+    
 
 class RouteComment(models.Model):
     """

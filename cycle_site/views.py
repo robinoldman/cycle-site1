@@ -8,6 +8,8 @@ from django.views.generic.list import ListView
 from .forms import CreateRoute
 from .models import Route
 from .models import RouteComment
+from django.contrib.auth.decorators import login_required
+from django.template.defaultfilters import slugify
 
 
 def logRoute(request):
@@ -126,7 +128,7 @@ class own_route_post(ListView):
     template_name = "own_route_post.html"
     paginate_by = 6
 
-
+@login_required
 def user_route(request):
 
     """
@@ -137,12 +139,18 @@ def user_route(request):
     """
 
     if request.method == 'POST':
-        form = RouteForm(request.POST, request.FILES)
+        print (request.POST)
+        form = CreateRoute(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            return redirect('own_route_post',)
+            route = form.save(commit=False)
+            slug = form.cleaned_data['name']  # Generate slug based on the name field
+            route.slug = generate_unique_slug(slug) 
+            route.save()
+            return redirect('own_route_post')
+        else:
+            print(form.errors)
 
-    form = RouteForm()
+    form = CreateRoute()
     return render(request, 'own_route.html', {'form': form})
 
 
@@ -155,6 +163,16 @@ def map_view(request):
     return render(request, 'main.html')
 
 
+def generate_unique_slug(slug):
+    """
+    Generates a unique slug by appending a number to the original slug if it already exists.
+    """
+    original_slug = slug
+    num = 1
+    while own_route.objects.filter(slug=slug).exists():
+        slug = f'{original_slug}-{num}'
+        num += 1
+    return slug
 
 
 
@@ -204,7 +222,7 @@ class PostDetailRoute(View):
         else: 
             comment_form = RouteCommentForm()
         
-        return redirect("user_route", )
+        return redirect("own_route", )
 
         if comment_form.is_valid():
             return render(

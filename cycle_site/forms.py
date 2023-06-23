@@ -9,9 +9,14 @@ class CreateRoute(forms.ModelForm):
     """
     Form for creating a Route object.
     """
+    start_point = forms.CharField(max_length=100, required=True)
+    end_point = forms.CharField(max_length=100, required=True)
+    name = forms.CharField(max_length=100, required=True)
+
     class Meta:
-        model = Route
-        fields = '__all__'
+        model = own_route
+        fields = ['start_point', 'end_point', 'name']
+        exclude = ['slug']
 
 class RouteCommentForm(forms.ModelForm):
     """
