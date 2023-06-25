@@ -2,6 +2,7 @@ from django import forms
 from .models import own_route
 from .models import Route
 from .models import RouteComment
+from .models import SiteRouteComment
 
 
 
@@ -29,6 +30,15 @@ class RouteCommentForm(forms.ModelForm):
         model = RouteComment
         fields = ('body',)
 
+
+class SiteRouteCommentForm(forms.ModelForm):
+    """
+    Form for creating a RouteComment object.
+    """
+    class Meta:
+        model = SiteRouteComment
+        fields = ('body',)
+
 class RouteForm(forms.ModelForm):
     """
     Form for creating an own_route object.
@@ -36,6 +46,19 @@ class RouteForm(forms.ModelForm):
     class Meta:
         model = own_route
         fields = '__all__'
+
+
+class SiteRouteForm(forms.ModelForm):
+    """
+    Form for creating a Route object.
+    """
+
+    route = forms.ChoiceField(choices=Route.ROUTE_CHOICES)
+
+    class Meta:
+        model = Route
+        fields = ['name', 'start_time', 'end_time', 'route']
+        exclude = ['slug']
 
 
 #from .models import Comment

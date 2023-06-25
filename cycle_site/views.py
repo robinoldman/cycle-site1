@@ -5,11 +5,12 @@ from .models import own_route
 from .forms import RouteForm
 from django.contrib import messages
 from django.views.generic.list import ListView
-from .forms import CreateRoute
+from .forms import CreateRoute, SiteRouteForm
 from .models import Route
 from .models import RouteComment
 from django.contrib.auth.decorators import login_required
 from django.template.defaultfilters import slugify
+
 
 
 def logRoute(request):
@@ -22,13 +23,24 @@ def logRoute(request):
     """
 
     if request.method == 'POST':
-        form = CreateRoute(request.POST)
+        form = SiteRouteForm(request.POST)
         if form.is_valid():
+            route = form.save(commit=False)
+            slug = form.cleaned_data['name']  # Generate slug based on the name field
+            route.slug = generate_unique_slug(slug)
             form.save()
             messages.success(request, "This is a success message.")
             return redirect('main')
+        else:
+            # Retrieve and display the specific error messages
+            error_messages = form.errors
+            print (form.errors)
+            for field, errors in error_messages.items():
+                for error in errors:
+                    messages.error(request, f"Error in field {field}: {error}")
     else:
         form = CreateRoute()
+
     
     return render(request, 'route.html', {'form': form})
 
@@ -174,7 +186,66 @@ def generate_unique_slug(slug):
         num += 1
     return slug
 
+class SitePostDetailRoute(View):
 
+    """
+    Displays the details of a specific own_route object,
+    including associated comments and comment form,
+    using the post_comments.html template.
+    """
+
+    def get(self, request, slug, *args, **kwargs):
+        
+        post = get_object_or_404(Route, slug=slug)
+        comments = post.route_comments.filter(approved=True).order_by("-created_on")
+        liked = False
+        #if post.likes.filter(id=self.request.user.id).exists():
+         #   liked = True
+
+        return render(
+            request,
+            "site_post_comments.html",
+            {
+                "post": post,
+                "comments": comments,
+                "commented": False,
+                "liked": liked,
+                "comment_form": RouteCommentForm()
+            },
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+        
+        post = get_object_or_404(Route, slug=slug)
+        comments = post.route_comments.filter(approved=True).order_by("-created_on")
+        liked = False
+        #if post.likes.filter(id=self.request.user.id).exists():
+         #   liked = True
+
+        comment_form = RouteCommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.post = get_object_or_404(Route, slug=slug)
+            comment.name = request.user
+            comment.save()
+
+        else: 
+            comment_form = RouteCommentForm()
+        
+        return redirect("own_route_post", )
+
+        if comment_form.is_valid():
+            return render(
+                request,
+                "site_post_comments.html",
+                {
+                    "post": post,
+                    "comments": comments,
+                    "commented": True,
+                    "liked": liked,
+                    "comment_form": RouteCommentForm()
+                },
+            )
 
 class PostDetailRoute(View):
 
@@ -236,7 +307,13 @@ class PostDetailRoute(View):
                     "comment_form": RouteCommentForm()
                 },
             )
+
+
+
 '''
+
+
+
 def post(self, request, slug, *args, **kwargs):
         
         submitted_data = request.POST  

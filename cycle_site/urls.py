@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path
-from .views import millstatt_routes, villach_routes, wortersee_routes, badkleinkircheim_routes, team_page, user_route, PostDetailRoute, own_route_post, create_event, create_event1, create_event2, create_event3
+from .views import millstatt_routes, villach_routes, wortersee_routes, badkleinkircheim_routes, team_page, user_route, PostDetailRoute, own_route_post, create_event, create_event1, create_event2, create_event3, SitePostDetailRoute
 
 
 urlpatterns = [
@@ -26,8 +26,11 @@ urlpatterns = [
     path('team/', team_page, name='team'),
     path('own_route_post/', views.own_route_post.as_view(), name='own_route_post'),
     path('postdetailroute/<slug:slug>/', views.PostDetailRoute.as_view(), name ='postdetailroute'),
+    path('sitepostdetailroute/<slug:slug>/', views.SitePostDetailRoute.as_view(), name='sitepostdetailroute'),
     #path('postdetail/<slug:slug>/', views.PostDetail.as_view(), name='PostDetail'),
+    path('<slug:slug>/', views.SitePostDetailRoute.as_view(), name= 'SitePostDetailRoute'),
     path('<slug:slug>/', views.PostDetailRoute.as_view(), name='PostDetailRoute'),
     #path('post-detail/<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
+    
     
     ]

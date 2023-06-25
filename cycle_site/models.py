@@ -56,6 +56,7 @@ class Route(models.Model):
     Represents a pre-defined route.
     """
     name = models.CharField(max_length=80, default='enter name')
+    slug = models.SlugField(max_length=200, unique=True, null=True) 
     start_time = models.TimeField()
     end_time = models.TimeField()
     ROUTE_CHOICES = (
@@ -71,6 +72,26 @@ class Route(models.Model):
         Returns a string representation of the Route object.
         """
         return self.name
+
+    
+class SiteRouteComment(models.Model):
+    """
+    Represents a comment on a route.
+    """
+    post = models.ForeignKey(Route, on_delete=models.CASCADE, related_name="route_comments")
+    name = models.CharField(max_length=80)
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ["created_on"]
+
+    def __str__(self):
+        """
+        Returns a string representation of the RouteComment object.
+        """
+        return f"Comment {self.body} by {self.name}"
 '''
 class Event(models.Model):
     name = models.CharField(max_length=80, default='enter name')

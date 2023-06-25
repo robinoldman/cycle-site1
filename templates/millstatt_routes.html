@@ -12,13 +12,13 @@
         
         <!-- view saved routes from the 'millstatt ' route. See start ime and end time -->
         {% for route in routes %}
-          <div class="card" style="margin-bottom: 10px;">  
+          <a href="{% url 'sitepostdetailroute' route.slug %}" class="card" style="margin-bottom: 10px;">  
             <div class="card-body">
               <h5 class="card-title">Rider: {{ route.name }}</h5>
               <p>Start Time: {{ route.start_time }}</p>
               <p>End Time: {{ route.end_time }}</p>
             </div>
-          </div>
+          </a>
         {% endfor %}
       </div>
 
