@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.views.generic.list import ListView
 from .forms import CreateRoute, SiteRouteForm
 from .models import Route
-from .models import RouteComment
+from .models import RouteComment, SiteRouteComment
 from django.contrib.auth.decorators import login_required
 from django.template.defaultfilters import slugify
 
