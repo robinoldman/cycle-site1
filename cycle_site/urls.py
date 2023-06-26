@@ -28,7 +28,7 @@ urlpatterns = [
     path('postdetailroute/<slug:slug>/', views.PostDetailRoute.as_view(), name ='postdetailroute'),
     path('sitepostdetailroute/<slug:slug>/', views.SitePostDetailRoute.as_view(), name='sitepostdetailroute'),
     #path('postdetail/<slug:slug>/', views.PostDetail.as_view(), name='PostDetail'),
-    path('<slug:slug>/', views.SitePostDetailRoute.as_view(), name= 'SitePostDetailRoute'),
+    
     path('<slug:slug>/', views.PostDetailRoute.as_view(), name='PostDetailRoute'),
     #path('post-detail/<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
     
