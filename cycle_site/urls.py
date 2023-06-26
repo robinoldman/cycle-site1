@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path
-from .views import millstatt_routes, villach_routes, wortersee_routes, badkleinkircheim_routes, team_page, user_route, PostDetailRoute, own_route_post, create_event, create_event1, create_event2, create_event3, SitePostDetailRoute
+from .views import millstatt_routes, villach_routes, wortersee_routes, badkleinkircheim_routes, team_page, user_route, PostDetailRoute, own_route_post, create_event, create_event1, create_event2, create_event3, SitePostDetailRoute, EditComment, DeleteComment
 
 
 urlpatterns = [
@@ -28,7 +28,9 @@ urlpatterns = [
     path('postdetailroute/<slug:slug>/', views.PostDetailRoute.as_view(), name ='postdetailroute'),
     path('sitepostdetailroute/<slug:slug>/', views.SitePostDetailRoute.as_view(), name='sitepostdetailroute'),
     #path('postdetail/<slug:slug>/', views.PostDetail.as_view(), name='PostDetail'),
-    
+    path('post/<slug:slug>/', SitePostDetailRoute.as_view(), name='own_route_post'),
+    path('post/<slug:slug>/edit/', EditComment.as_view(), name='edit_comment'),
+    path('post/<slug:slug>/delete/', DeleteComment.as_view(), name='delete_comment'),
     path('<slug:slug>/', views.PostDetailRoute.as_view(), name='PostDetailRoute'),
     #path('post-detail/<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
     

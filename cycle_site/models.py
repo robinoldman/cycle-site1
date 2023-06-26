@@ -79,7 +79,9 @@ class SiteRouteComment(models.Model):
     Represents a comment on a route.
     """
     post = models.ForeignKey(Route, on_delete=models.CASCADE, related_name="route_comments")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=User.objects.first().pk)
     name = models.CharField(max_length=80)
+    slug = models.SlugField(max_length=200, unique =True, null=True )
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)

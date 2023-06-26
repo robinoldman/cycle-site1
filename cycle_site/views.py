@@ -185,6 +185,7 @@ def generate_unique_slug(slug):
         slug = f'{original_slug}-{num}'
         num += 1
     return slug
+
 class SitePostDetailRoute(View):
     """
     Displays the details of a specific own_route object,
@@ -234,10 +235,26 @@ class SitePostDetailRoute(View):
                     "comment_form": SiteRouteCommentForm()
                 },
             )
-        else:
-            comment_form = SiteRouteCommentForm()
 
-        return redirect("own_route_post")
+class DeleteComment(View):
+    def post(self, request, comment_slug):
+        comment = get_object_or_404(SiteRouteComment, slug=comment_slug)
+        comment.delete()
+        return redirect("own_route_post", slug=comment.post.slug)
+
+class EditComment(View):
+    def post(self, request, comment_slug):
+        comment = get_object_or_404(SiteRouteComment, slug=comment_slug)
+        if request.method == 'POST':
+            form = SiteRouteCommentForm(request.POST, instance=comment)
+            if form.is_valid():
+                form.save()
+                return redirect("sitepostdetailroute", slug=comment.post.slug)
+        else:
+            form = SiteRouteCommentForm(instance=comment)
+        return render(request, "site_post_comments.html", {"form": form, "comment": comment})
+
+
 
 
 class PostDetailRoute(View):
