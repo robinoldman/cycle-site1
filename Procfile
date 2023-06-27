@@ -1,1 +1,1 @@
-web: gunicorn cycle_site.wsgi
+web: gunicorn cycle.wsgi
