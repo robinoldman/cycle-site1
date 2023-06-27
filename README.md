@@ -10,6 +10,8 @@ os.environ["CLOUDINARY_URL"] = 'cloudinary://962444711949455:IEF70dVolBgsnC0nr_H
 
 env.py
 
+The error message suggests that the URL pattern post/None/edit/ is being matched, but it should not be the case. It appears that the comment_slug value is not being passed correctly to the URL or the view.
+
 pip install -r requirements.txt
 
 This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.

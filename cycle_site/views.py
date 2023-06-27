@@ -182,9 +182,10 @@ def generate_unique_slug(slug):
     original_slug = slug
     num = 1
     while own_route.objects.filter(slug=slug).exists():
-        slug = f'{original_slug}-{num}'
+        print(f"Checking slug: {slug}")  
+        new_slug = f'{original_slug}-{num}'
         num += 1
-    return slug
+    return new_slug
 
 class SitePostDetailRoute(View):
     """
@@ -219,7 +220,9 @@ class SitePostDetailRoute(View):
 
         comment_form = SiteRouteCommentForm(data=request.POST)
         if comment_form.is_valid():
+            
             comment = comment_form.save(commit=False)
+            
             comment.post = post
             comment.name = request.user
             comment.save()
@@ -237,14 +240,14 @@ class SitePostDetailRoute(View):
             )
 
 class DeleteComment(View):
-    def post(self, request, comment_slug):
-        comment = get_object_or_404(SiteRouteComment, slug=comment_slug)
+    def post(self, request, pk):
+        comment = get_object_or_404(SiteRouteComment, pk=pk)
         comment.delete()
-        return redirect("own_route_post", slug=comment.post.slug)
+        return redirect("own_route_post")
 
 class EditComment(View):
-    def post(self, request, comment_slug):
-        comment = get_object_or_404(SiteRouteComment, slug=comment_slug)
+    def post(self, request, pk):
+        comment = get_object_or_404(SiteRouteComment, pk=pk)
         if request.method == 'POST':
             form = SiteRouteCommentForm(request.POST, instance=comment)
             if form.is_valid():
