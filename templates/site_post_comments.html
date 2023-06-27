@@ -30,7 +30,6 @@
                                 <span class="text-muted font-weight-normal">{{ comment.created_on }}</span> wrote:
                             </p>
                             {{ comment.body | linebreaks }}
-
                             {% if comment.user == user %}
                             <form method="post" action="{% url 'edit_comment' comment.pk %}" style="display: inline-block;">
                                 {% csrf_token %}

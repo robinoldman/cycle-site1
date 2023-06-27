@@ -231,6 +231,7 @@ class SitePostDetailRoute(LoginRequiredMixin, View):
             
             comment.post = post
             comment.name = request.user
+            comment.user = request.user
             comment.save()
 
             return render(
