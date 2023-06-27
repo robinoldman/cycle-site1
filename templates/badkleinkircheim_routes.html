@@ -18,6 +18,7 @@
         
         <!-- view saved routes from the 'Badkleinkirchem ' route. See start ime and end time -->
         {% for route in routes %}
+        <a href="{% url 'sitepostdetailroute' route.slug %}" class="card" style="margin-bottom: 10px;">
           <div class="card" style="margin-bottom: 10px;">  
             <div class="card-body">
               <!-- Display the route details -->
@@ -26,6 +27,7 @@
               <p>End Time: <input type="time" value="{{ route.end_time|time:'H:i:s' }}"></p>
             </div>
           </div>
+        </a>
         {% endfor %}
       </div>
 

@@ -350,7 +350,7 @@ background-color: #ccc;
     font-size: 18px;
   }
 
-  @media (max-width: 767px) { /* Apply styles for screens up to max-width 767px (extra small) */
+  @media (max-width: 767px) { 
     .placeholder {
       text-align: center;
     }
@@ -463,6 +463,17 @@ background-color: #ccc;
     opacity: 1;
 }
 
+.container {
+    min-height: 100vh; /* Ensure the container takes up at least the full viewport height */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .background-site-route {
+    flex: 1; 
+    background-image: url('https://images.pexels.com/photos/552785/pexels-photo-552785.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+  }
 
 .panel.active h4{
     opacity: 1;

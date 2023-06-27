@@ -3,33 +3,29 @@
 
 
 {% block content %}
-<div class="background" >
+
+<div class="background-site-route">
   <div class="container">
-    <div  class="row">
+    <div class="row">
       <h1>Villach Route</h1>
       <div class="col-md-6">
-        
-          <div id="route-details" class="card-route" style="margin-bottom: 10px;">  
-            <div class="card-body">
-              <!-- Route details card -->
-              <p>
-                Difficulty: Moderate<br>
-                Distance: 10k
-              </p>
-                <!-- Route description -->
-              <p>
-                The Villach route is a captivating cycling experience that combines alpine beauty, exhilaration, 
-                and cultural immersion. This scenic route takes you through breathtaking mountainous terrain, 
-                offering stunning panoramic views at every turn. <br><br>The challenging yet rewarding terrain provides a 
-                thrilling adventure, with uphill climbs and invigorating descents that get your heart racing. 
-              </p>
-              
-            </div>
+        <div id="route-details" class="card-route" style="margin-bottom: 10px;">
+          <div class="card-body">
+            <!-- Route details card -->
+            <p>
+              Difficulty: Moderate<br>
+              Distance: 10k
+            </p>
+            <!-- Route description -->
+            <p>
+              The Villach route is a captivating cycling experience that combines alpine beauty, exhilaration, 
+              and cultural immersion. This scenic route takes you through breathtaking mountainous terrain, 
+              offering stunning panoramic views at every turn. <br><br>The challenging yet rewarding terrain provides a 
+              thrilling adventure, with uphill climbs and invigorating descents that get your heart racing. 
+            </p>
           </div>
-        
+        </div>
       </div>
-      
-
       <div class="col-md-6">
         <!-- Map container -->
         <div id="map"></div>
@@ -37,6 +33,7 @@
     </div>
   </div>
 </div>
+
 <!-- Google Maps API -->
   <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTcR7zZ261S2sxhPtcnbGodSfbKWcVFWo&libraries=places"></script>

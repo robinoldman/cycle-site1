@@ -11,6 +11,7 @@
         
           <!-- view saved routes from the 'wortersee ' route. See start ime and end time -->
         {% for route in routes %}
+        <a href="{% url 'sitepostdetailroute' route.slug %}" class="card" style="margin-bottom: 10px;">
           <div class="card" style="margin-bottom: 10px;">  
             <div class="card-body">
               <h5 class="card-title">Rider: {{ route.name }}</h5>
@@ -18,6 +19,7 @@
               <p>End Time: {{ route.end_time }}</p>
             </div>
           </div>
+        </a>
         {% endfor %}
       </div>
 
