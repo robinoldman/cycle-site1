@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from .forms import RouteCommentForm
-from .models import own_route
+from .models import OwnRoute
 from .forms import RouteForm, SiteRouteCommentForm
 from django.contrib import messages
 from django.views.generic.list import ListView
@@ -138,11 +138,11 @@ def create_event3(request):
 class own_route_post(LoginRequiredMixin, ListView):
  
     """
-    Displays a paginated list of own_route objects
+    Displays a paginated list of OwnRoute objects
     using the own_route_post.html template.
     """
 
-    model = own_route
+    model = OwnRoute
     template_name = "own_route_post.html"
     paginate_by = 6
 
@@ -187,7 +187,7 @@ def generate_unique_slug(slug):
     """
     original_slug = slug
     num = 1
-    while own_route.objects.filter(slug=slug).exists():
+    while OwnRoute.objects.filter(slug=slug).exists():
         slug = f'{original_slug}-{num}'
         num += 1
     return slug
@@ -195,7 +195,7 @@ def generate_unique_slug(slug):
 
 class SitePostDetailRoute(LoginRequiredMixin, View):
     """
-    Displays the details of a specific own_route object,
+    Displays the details of a specific OwnRoute object,
     including associated comments and comment form,
     using the post_comments.html template.
     """
@@ -268,13 +268,13 @@ class EditComment(LoginRequiredMixin, View):
 
 class PostDetailRoute(View):
     """
-    Displays the details of a specific own_route object,
+    Displays the details of a specific OwnRoute object,
     including associated comments and comment form,
     using the post_comments.html template.
     """
 
     def get(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(own_route, slug=slug)
+        post = get_object_or_404(OwnRoute, slug=slug)
         comments = post.route_comments.filter(approved=True).order_by("-created_on")
         liked = False
         comment_form = RouteCommentForm()  # Define the comment_form variable
@@ -293,7 +293,7 @@ class PostDetailRoute(View):
             )
     
     def post(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(own_route, slug=slug)
+        post = get_object_or_404(OwnRoute, slug=slug)
         comments = post.route_comments.filter(approved=True).order_by("-created_on")
         liked = False
         # if post.likes.filter(id=self.request.user.id).exists():
@@ -302,7 +302,7 @@ class PostDetailRoute(View):
         comment_form = RouteCommentForm(data=request.POST)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
-            comment.post = get_object_or_404(own_route, slug=slug)
+            comment.post = get_object_or_404(OwnRoute, slug=slug)
             comment.name = request.user
             comment.save()
         else:

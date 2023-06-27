@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import   own_route, Route, RouteComment, SiteRouteComment
+from .models import   OwnRoute, Route, RouteComment, SiteRouteComment
 from django_summernote.admin import SummernoteModelAdmin
 
 #Event, Event1, Event2, Event3,
@@ -9,7 +9,7 @@ from django_summernote.admin import SummernoteModelAdmin
 #admin.site.register(Event3)
 admin.site.register(Route)
 admin.site.register(RouteComment)
-admin.site.register(own_route)
+admin.site.register(OwnRoute)
 admin.site.register(SiteRouteComment)
 
 '''

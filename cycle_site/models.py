@@ -7,7 +7,7 @@ from django.template.defaultfilters import slugify
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
-class own_route(models.Model):
+class OwnRoute(models.Model):
     """
     Represents a user-defined route.
     """
@@ -36,7 +36,7 @@ class RouteComment(models.Model):
     """
     Represents a comment on a route.
     """
-    post = models.ForeignKey(own_route, on_delete=models.CASCADE, related_name="route_comments")
+    post = models.ForeignKey(OwnRoute, on_delete=models.CASCADE, related_name="route_comments")
     name = models.CharField(max_length=80)
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)

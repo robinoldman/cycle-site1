@@ -1,5 +1,5 @@
 from django import forms
-from .models import own_route
+from .models import OwnRoute
 from .models import Route
 from .models import RouteComment
 from .models import SiteRouteComment
@@ -18,7 +18,7 @@ class CreateRoute(forms.ModelForm):
     
 
     class Meta:
-        model = own_route
+        model = OwnRoute
         fields = ['start_point', 'end_point', 'name', 'description', 'image']
         exclude = ['slug']
 
@@ -41,10 +41,10 @@ class SiteRouteCommentForm(forms.ModelForm):
 
 class RouteForm(forms.ModelForm):
     """
-    Form for creating an own_route object.
+    Form for creating an OwnRoute object.
     """
     class Meta:
-        model = own_route
+        model = OwnRoute
         fields = '__all__'
 
 
