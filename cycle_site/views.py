@@ -193,7 +193,7 @@ def generate_unique_slug(slug):
     return slug
 
 
-class SitePostDetailRoute(LoginRequiredMixin, View):
+class SitePostDetailRoute(View):
     """
     Displays the details of a specific OwnRoute object,
     including associated comments and comment form,
@@ -280,30 +280,27 @@ class PostDetailRoute(View):
         liked = False
         comment_form = RouteCommentForm()  # Define the comment_form variable
 
-        if comment_form.is_valid():
-            return render(
-                request,
-                "post_comments.html",
-                {
-                    "post": post,
-                    "comments": comments,
-                    "commented": True,
-                    "liked": liked,
-                    "comment_form": RouteCommentForm()
-                },
-            )
-    
+        return render(
+            request,
+            "post_comments.html",
+            {
+                "post": post,
+                "comments": comments,
+                "commented": False,
+                "liked": liked,
+                "comment_form": comment_form
+            },
+        )
+
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(OwnRoute, slug=slug)
         comments = post.route_comments.filter(approved=True).order_by("-created_on")
         liked = False
-        # if post.likes.filter(id=self.request.user.id).exists():
-        #     liked = True
 
         comment_form = RouteCommentForm(data=request.POST)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
-            comment.post = get_object_or_404(OwnRoute, slug=slug)
+            comment.post = post
             comment.name = request.user
             comment.save()
         else:
@@ -311,6 +308,7 @@ class PostDetailRoute(View):
 
         # Redirect to the post detail page after comment submission
         return redirect("own_route_post", slug=slug)
+
 
 
         
