@@ -75,14 +75,7 @@
    <div class="container_routes">
       <div class="panel active" style="background-image: url('{% static 'images/panel4.jpg' %}')">
          <h3>Millstatt Route</h3>
-         <div class="panels-info">
-            <h4>Difficulty: </h4>
-            <button type="button" id="difficult-button" class="btn btn-success">Easy</button>
-            <h4 id="distance-heading">
-               Distance:
-            </h4>
-            <button type="button" id="distance-button" class="btn btn-light">10k</button>
-         </div>
+         
          <div class="d-grid gap-2 col-6 mx-auto">
             <a href="{% url 'create_event1' %}" class="btn btn-outline-light">View Route</a>
             <a href="{% url 'millstatt_routes' %}" class="btn btn-outline-light">View most recent times </a>
@@ -93,14 +86,7 @@
       <!-- card for Wortersee route includes link for route info, log time and look at previous times  -->
       <div class="panel" style="background-image: url('{% static 'images/panel1.jpg' %}')">
          <h3>Wortersee</h3>
-         <div class="panels-info">
-            <h4>Difficulty: </h4>
-            <h4 id="distance-heading">
-               Distance:
-            </h4>
-            <button type="button" id="distance-button" class="btn btn-light">10k</button>
-            <button type="button" id="difficult-button" class="btn btn-warning">Moderate</button>
-         </div>
+         
          <div class="d-grid gap-2 col-6 mx-auto">
             <a href="{% url 'create_event3' %}" class="btn btn-outline-light">View Route</a>
             <a href="{% url 'badkleinkircheim' %}" class="btn btn-outline-light">View most recent times </a>
@@ -110,15 +96,7 @@
       </div>
       <!-- card for Bad Kleinkirchem route includes link for route info, log time and look at previous times  -->
       <div class="panel" style="background-image: url('{% static 'images/panel2.jpg' %}')">
-         <div class="panels-info">
-            <h3>Bad Kleinkircheim</h3>
-            <h4>Difficulty:</h4>
-            <button type="button" id="difficult-button" class="btn btn-danger">Hard</button>
-            <h4 id="distance-heading">
-               Distance:
-            </h4>
-            <button type="button" id="distance-button" class="btn btn-light">10k</button>
-         </div>
+         
          <div class="d-grid gap-2 col-6 mx-auto">
             <a href="{% url 'create_event2' %}" class="btn btn-outline-light">View Route</a>
             <a href="{% url 'villach' %}" class="btn btn-outline-light">View most recent times </a>
@@ -128,17 +106,7 @@
       </div>
       <!-- card for Villach route includes link for route info, log time and look at previous times  -->
       <div class="panel" style="background-image: url('{% static 'images/panel3.jpg' %}')">
-         <div class="panels-info">
-            <h3>Villach</h3>
-            <h4>
-               Difficulty:
-            </h4>
-            <button type="button" id="difficult-button" class="btn btn-warning">Moderate</button>
-            <h4 id="distance-heading">
-               Distance:
-            </h4>
-            <button type="button" id="distance-button" class="btn btn-light">10k</button>
-         </div>
+         
          <div class="d-grid gap-2 col-6 mx-auto">
             <a href="{% url 'create_event' %}" class="btn btn-outline-light">View Route</a>
             <a href="{% url 'wortersee' %}" class="btn btn-outline-light">View most recent times </a>
@@ -148,8 +116,7 @@
       </div>
    </div>
 </div>
-</div>
-</div>
+
 <script src="{% static 'script.js' %}"></script>
 {% endblock %}</body>
 

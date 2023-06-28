@@ -28,23 +28,22 @@ def logRoute(request):
         form = SiteRouteForm(request.POST)
         if form.is_valid():
             route = form.save(commit=False)
-            slug = form.cleaned_data['name']  # Generate slug based on the name field
+            slug = form.cleaned_data['name']
             route.slug = generate_unique_slug(slug)
             form.save()
             messages.success(request, "This is a success message.")
             return redirect('main')
         else:
-            # Retrieve and display the specific error messages
             error_messages = form.errors
-            print (form.errors)
+            print(form.errors)
             for field, errors in error_messages.items():
                 for error in errors:
                     messages.error(request, f"Error in field {field}: {error}")
     else:
         form = CreateRoute()
 
-    
     return render(request, 'route.html', {'form': form})
+
 
 @login_required
 def millstatt_routes(request):
@@ -57,6 +56,7 @@ def millstatt_routes(request):
     mill_routes = Route.objects.filter(route='milstatt')
     return render(request, 'millstatt_routes.html', {'routes': mill_routes})
 
+
 @login_required
 def badkleinkircheim_routes(request):
 
@@ -66,7 +66,9 @@ def badkleinkircheim_routes(request):
     """
 
     bad_routes = Route.objects.filter(route='bad_kleikircheim')
-    return render(request, 'badkleinkircheim_routes.html', {'routes': bad_routes})
+    return render(
+        request, 'badkleinkircheim_routes.html', {'routes': bad_routes})
+
 
 @login_required
 def wortersee_routes(request):
@@ -79,6 +81,7 @@ def wortersee_routes(request):
     wort_routes = Route.objects.filter(route='wortersee')
     return render(request, 'wortersee_routes.html', {'routes': wort_routes})
 
+
 @login_required
 def villach_routes(request):
 
@@ -90,6 +93,7 @@ def villach_routes(request):
     vill_routes = Route.objects.filter(route='villach')
     return render(request, 'villach_routes.html', {'routes': vill_routes})
 
+
 def team_page(request):
 
     """
@@ -98,6 +102,7 @@ def team_page(request):
 
     return render(request, 'team.html')
 
+
 @login_required
 def create_event(request):
 
@@ -105,38 +110,33 @@ def create_event(request):
     Renders to the create_event page.
     """
 
-    return render (request, 'create_event.html')
-    
+    return render(request, 'create_event.html')
+
+
 @login_required
 def create_event1(request):
     return render(request, 'create_event1.html')
 
 
-
- 
 @login_required
 def create_event2(request):
 
     """
     Redirects to the create_event2 page.
     """
+    return render(request, 'create_event2.html')
 
-    return render( request, 'create_event2.html')
 
 @login_required
 def create_event3(request):
-     
+
     """
     Redirects to the create_event3 page.
     """
-
     return render(request,  'create_event3.html')
 
 
-
-
 class own_route_post(LoginRequiredMixin, ListView):
- 
     """
     Displays a paginated list of OwnRoute objects
     using the own_route_post.html template.
@@ -157,12 +157,12 @@ def user_route(request):
     """
 
     if request.method == 'POST':
-        print (request.POST)
+        print(request.POST)
         form = CreateRoute(request.POST, request.FILES)
         if form.is_valid():
             route = form.save(commit=False)
-            slug = form.cleaned_data['name']  # Generate slug based on the name field
-            route.slug = generate_unique_slug(slug) 
+            slug = form.cleaned_data['name']
+            route.slug = generate_unique_slug(slug)
             route.save()
             return redirect('own_route_post')
         else:
@@ -173,7 +173,7 @@ def user_route(request):
 
 
 def map_view(request):
- 
+
     """
     Renders the main.html template.
     """
@@ -183,7 +183,8 @@ def map_view(request):
 
 def generate_unique_slug(slug):
     """
-    Generates a unique slug by appending a number to the original slug if it already exists.
+    Generates a unique slug by appending a number
+    to the original slug if it already exists.
     """
     original_slug = slug
     num = 1
@@ -202,7 +203,9 @@ class SitePostDetailRoute(View):
 
     def get(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Route, slug=slug)
-        comments = post.route_comments.filter(approved=True).order_by("-created_on")
+        comments = (
+            post.route_comments.filter(approved=True)
+            .order_by("-created_on"))
         liked = False
 
         return render(
@@ -219,16 +222,16 @@ class SitePostDetailRoute(View):
 
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Route, slug=slug)
-        comments = post.route_comments.filter(approved=True).order_by("-created_on")
+        comments = (
+            post.route_comments.filter(approved=True)
+            .order_by("-created_on"))
         liked = False
         # if post.likes.filter(id=self.request.user.id).exists():
         #     liked = True
 
         comment_form = SiteRouteCommentForm(data=request.POST)
         if comment_form.is_valid():
-            
             comment = comment_form.save(commit=False)
-            
             comment.post = post
             comment.name = request.user
             comment.user = request.user
@@ -246,9 +249,12 @@ class SitePostDetailRoute(View):
                 },
             )
 
+
 class DeleteComment(LoginRequiredMixin, View):
     def post(self, request, pk):
-        comment = get_object_or_404(SiteRouteComment, pk=pk, user=request.user)
+        comment = (
+            get_object_or_404(SiteRouteComment, 
+            pk=pk, user=request.user))
         comment.delete()
         return redirect("own_route_post")
 
@@ -262,9 +268,10 @@ class EditComment(LoginRequiredMixin, View):
                 return redirect("sitepostdetailroute", slug=comment.post.slug)
         else:
             form = SiteRouteCommentForm(instance=comment)
-        return render(request, "site_post_comments.html", {"form": form, "comment": comment})
-
-
+        return render(
+            request, 
+            "site_post_comments.html", 
+            {"form": form, "comment": comment})
 
 
 class PostDetailRoute(View):
@@ -276,7 +283,10 @@ class PostDetailRoute(View):
 
     def get(self, request, slug, *args, **kwargs):
         post = get_object_or_404(OwnRoute, slug=slug)
-        comments = post.route_comments.filter(approved=True).order_by("-created_on")
+        comments = (
+            post.route_comments
+            .filter(approved=True)
+            .order_by("-created_on"))
         liked = False
         comment_form = RouteCommentForm()  # Define the comment_form variable
 
@@ -294,7 +304,10 @@ class PostDetailRoute(View):
 
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(OwnRoute, slug=slug)
-        comments = post.route_comments.filter(approved=True).order_by("-created_on")
+        comments = (
+            post.route_comments
+            .filter(approved=True)
+            .order_by("-created_on"))
         liked = False
 
         comment_form = RouteCommentForm(data=request.POST)
@@ -308,18 +321,3 @@ class PostDetailRoute(View):
 
         # Redirect to the post detail page after comment submission
         return redirect("own_route_post", slug=slug)
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-      
