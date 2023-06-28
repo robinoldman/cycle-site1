@@ -12,9 +12,11 @@
       </div>
     </div>
     <!-- image and names for Sue worker-->
+    {% load static %}
+
     <div class="col-12 col-sm-6 col-md-6 col-lg-3">
       <div class="placeholder">
-        <img src="../static/images/sue1.png" class="img-responsive" alt="Generic placeholder thumbnail" width="200" height="200">
+        <img src="{% static 'images/sue1.png' %}" class="img-responsive" alt="Generic placeholder thumbnail" width="200" height="200">
         <h4><br>Sue Yates</h4>
         <span class="text-muted">Company Secretary<br><br></span>
       </div>
