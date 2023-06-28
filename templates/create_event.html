@@ -1,7 +1,5 @@
 {% extends "base.html" %}
-
-
-
+{% load static %}
 {% block content %}
 
 <div class="background-site-route">
@@ -35,7 +33,8 @@
 </div>
 
 <!-- Google Maps API -->
-  <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTcR7zZ261S2sxhPtcnbGodSfbKWcVFWo&libraries=places"></script>
-  <script src="../static/script.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTcR7zZ261S2sxhPtcnbGodSfbKWcVFWo&libraries=places"></script>
+<script src="{% static 'maps2.js' %}"></script>
+
 {% endblock %}
+
