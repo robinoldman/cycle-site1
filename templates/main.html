@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+
+{% load static %}
+
 {% block content %}
 <!-- hero section  -->
 <section class="hero">
@@ -13,79 +16,77 @@
 </section>
 
 <div class="container-lg my-5">
-      <div class="row">
-         <!-- user route for user to create and publish own route  -->
-         <div class="col-12 col-md-6  mb-4">
-            <a href="{% url 'user_route' %}">
-               <div class="text-light image-container">
-                  <img class="menu-image" src="https://images.pexels.com/photos/2270328/pexels-photo-2270328.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Austria Image">
-                  <div class="overlay">
-                     <div class="overlay-content">publish a new route</div>
-                  </div>
+   <div class="row">
+      <!-- user route for user to create and publish own route  -->
+      <div class="col-12 col-md-6  mb-4">
+         <a href="{% url 'user_route' %}">
+            <div class="text-light image-container">
+               <img class="menu-image" src="https://images.pexels.com/photos/2270328/pexels-photo-2270328.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Austria Image">
+               <div class="overlay">
+                  <div class="overlay-content">publish a new route</div>
                </div>
-            </a>
-         </div>
+            </div>
+         </a>
+      </div>
 
-         <!-- user can log their own time -->
-         <div class="col-12 col-md-6  mb-4">
-            <a href="{% url 'route' %}">
-               <div class="text-light image-container">
-                  <img class="menu-image" src="https://images.pexels.com/photos/1208777/pexels-photo-1208777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Austria Image">
-                  <div class="overlay">
-                     <div class="overlay-content">log your time</div>
-                  </div>
+      <!-- user can log their own time -->
+      <div class="col-12 col-md-6  mb-4">
+         <a href="{% url 'route' %}">
+            <div class="text-light image-container">
+               <img class="menu-image" src="https://images.pexels.com/photos/1208777/pexels-photo-1208777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Austria Image">
+               <div class="overlay">
+                  <div class="overlay-content">log your time</div>
                </div>
-            </a>
-         </div>
-         <!-- ability to see all route maps  -->
-         <div class="col-12 col-md-6 mb-4">
-            <a href="{% url 'own_route_post' %}">
-               <div class="text-light image-container">
-                  <img class="menu-image" src="https://images.pexels.com/photos/552785/pexels-photo-552785.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Austria Image">
-                  <div class="overlay">
-                     <div class="overlay-content">view users' routes</div>
-                  </div>
+            </div>
+         </a>
+      </div>
+      <!-- ability to see all route maps  -->
+      <div class="col-12 col-md-6 mb-4">
+         <a href="{% url 'own_route_post' %}">
+            <div class="text-light image-container">
+               <img class="menu-image" src="https://images.pexels.com/photos/552785/pexels-photo-552785.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Austria Image">
+               <div class="overlay">
+                  <div class="overlay-content">view users' routes</div>
                </div>
-            </a>
-         </div>
-         <!-- see the team behind the company -->
-         <div class="col-12 col-md-6 mb-4">
-            <a href="{% url 'team' %}">
-               <div class="text-light image-container">
-                  <img class="menu-image" src="https://images.pexels.com/photos/554609/pexels-photo-554609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Austria Image">
-                  <div class="overlay">
-                     <div class="overlay-content">Our team</div>
-                  </div>
+            </div>
+         </a>
+      </div>
+      <!-- see the team behind the company -->
+      <div class="col-12 col-md-6 mb-4">
+         <a href="{% url 'team' %}">
+            <div class="text-light image-container">
+               <img class="menu-image" src="https://images.pexels.com/photos/554609/pexels-photo-554609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Austria Image">
+               <div class="overlay">
+                  <div class="overlay-content">Our team</div>
                </div>
-            </a>
-         </div>
+            </div>
+         </a>
       </div>
    </div>
-   
+</div>
 
-</div><div class="color-block1">
+<div class="color-block1">
    <!-- cards for each set route -->
    <div class="icon-container-cards">
       <i class="fa-solid fa-bicycle"></i>
    </div>
-  <!-- card for Millstattt route includes link for route info, log time and look at previous times  -->
-  <div class="cards-heading"> Discover our free planned routes! Each route is graded from easy to hard, offering stunning views. Get route information, time your own progress, and compare with others. Start exploring today!</div>
-<div class="container_routes">
+   <!-- card for Millstattt route includes link for route info, log time and look at previous times  -->
+   <div class="cards-heading">Discover our free planned routes! Each route is graded from easy to hard, offering stunning views. Get route information, time your own progress, and compare with others. Start exploring today!</div>
+   <div class="container_routes">
       <div class="panel active" style="background-image: url('https://images.pexels.com/photos/1687122/pexels-photo-1687122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')">
          <h3>Millstatt Route</h3>
          <div class="panels-info">
-         <h4>Difficulty: </h4>
-         <button type="button" id="difficult-button" class="btn btn-success">Easy</button>
-         <h4 id="distance-heading">
-            Distance:
-         </h4>
-         
-         <button type="button" id="distance-button" class="btn btn-light">10k</button>
+            <h4>Difficulty: </h4>
+            <button type="button" id="difficult-button" class="btn btn-success">Easy</button>
+            <h4 id="distance-heading">
+               Distance:
+            </h4>
+            <button type="button" id="distance-button" class="btn btn-light">10k</button>
          </div>
          <div class="d-grid gap-2 col-6 mx-auto">
-            <a href= "{% url 'create_event1' %}" class="btn btn-outline-light">View Route</a>
-            <a href= "{% url 'millstatt_routes' %}" class="btn btn-outline-light">View most recent times </a>
-            <a href= "{% url 'route' %}" class="btn btn-outline-light">Log your own time</a>
+            <a href="{% url 'create_event1' %}" class="btn btn-outline-light">View Route</a>
+            <a href="{% url 'millstatt_routes' %}" class="btn btn-outline-light">View most recent times </a>
+            <a href="{% url 'route' %}" class="btn btn-outline-light">Log your own time</a>
          </div>
          <div class="overlay-routes"></div>
       </div>
@@ -93,66 +94,63 @@
       <div class="panel" style="background-image: url('https://images.pexels.com/photos/1686302/pexels-photo-1686302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')">
          <h3>Wortersee</h3>
          <div class="panels-info">
-         <h4> Difficulty: </h4>
-         <h4 id="distance-heading">
-            Distance:
-         </h4>
-         <button type="button" id="distance-button" class="btn btn-light">10k</button>
-         <button type="button" id="difficult-button" class="btn btn-warning">Moderate</button>
+            <h4>Difficulty: </h4>
+            <h4 id="distance-heading">
+               Distance:
+            </h4>
+            <button type="button" id="distance-button" class="btn btn-light">10k</button>
+            <button type="button" id="difficult-button" class="btn btn-warning">Moderate</button>
          </div>
          <div class="d-grid gap-2 col-6 mx-auto">
-            <a href= "{% url 'create_event3' %}" class="btn btn-outline-light">View Route</a>
-            <a href= "{% url 'badkleinkircheim' %}" class="btn btn-outline-light">View most recent times </a>
-            <a href= "{% url 'route' %}" class="btn btn-outline-light">Log your own time</a>
+            <a href="{% url 'create_event3' %}" class="btn btn-outline-light">View Route</a>
+            <a href="{% url 'badkleinkircheim' %}" class="btn btn-outline-light">View most recent times </a>
+            <a href="{% url 'route' %}" class="btn btn-outline-light">Log your own time</a>
          </div>
          <div class="overlay-routes"></div>
       </div>
       <!-- card for Bad Kleinkirchem route includes link for route info, log time and look at previous times  -->
       <div class="panel" style="background-image: url('https://images.pexels.com/photos/1428787/pexels-photo-1428787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')">
          <div class="panels-info">
-         <h3>Bad Kleinkircheim</h3>
-         <h4>Difficulty:</h4>
-
-         <button type="button" id="difficult-button" class="btn btn-danger">Hard</button>
-         <h4 id="distance-heading">
-            Distance:
-         </h4>
-         <button type="button" id="distance-button" class="btn btn-light">10k</button>
-           </div>
+            <h3>Bad Kleinkircheim</h3>
+            <h4>Difficulty:</h4>
+            <button type="button" id="difficult-button" class="btn btn-danger">Hard</button>
+            <h4 id="distance-heading">
+               Distance:
+            </h4>
+            <button type="button" id="distance-button" class="btn btn-light">10k</button>
+         </div>
          <div class="d-grid gap-2 col-6 mx-auto">
-            <a href= "{% url 'create_event2' %}" class="btn btn-outline-light">View Route</a>
-            <a href= "{% url 'villach' %}" class="btn btn-outline-light">View most recent times </a>
-            <a href= "{% url 'route' %}" class="btn btn-outline-light">Log your own time</a>
+            <a href="{% url 'create_event2' %}" class="btn btn-outline-light">View Route</a>
+            <a href="{% url 'villach' %}" class="btn btn-outline-light">View most recent times </a>
+            <a href="{% url 'route' %}" class="btn btn-outline-light">Log your own time</a>
          </div>
          <div class="overlay-routes"></div>
       </div>
       <!-- card for Villach route includes link for route info, log time and look at previous times  -->
-      <div class="panel" style="background-image: url('https://images.pexels.com/photos/2737232/pexels-photo-2737232.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)">
+      <div class="panel" style="background-image: url('https://images.pexels.com/photos/2737232/pexels-photo-2737232.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')">
          <div class="panels-info">
-         <h3>Villach</h3>
-         <h4>
-            Difficulty:
-         </h4>
-         <button type="button" id="difficult-button" class="btn btn-warning">Moderate</button>
-         <h4 id="distance-heading">
-            Distance:
-         </h4>
-         <button type="button" id="distance-button" class="btn btn-light">10k</button>
+            <h3>Villach</h3>
+            <h4>
+               Difficulty:
+            </h4>
+            <button type="button" id="difficult-button" class="btn btn-warning">Moderate</button>
+            <h4 id="distance-heading">
+               Distance:
+            </h4>
+            <button type="button" id="distance-button" class="btn btn-light">10k</button>
          </div>
          <div class="d-grid gap-2 col-6 mx-auto">
-            <a href= "{% url 'create_event' %}" class="btn btn-outline-light">View Route</a>
-            <a href= "{% url 'wortersee' %}" class="btn btn-outline-light">View most recent times </a>
-            <a href= "{% url 'route' %}" class="btn btn-outline-light">Log your own time</a>
+            <a href="{% url 'create_event' %}" class="btn btn-outline-light">View Route</a>
+            <a href="{% url 'wortersee' %}" class="btn btn-outline-light">View most recent times </a>
+            <a href="{% url 'route' %}" class="btn btn-outline-light">Log your own time</a>
          </div>
          <div class="overlay-routes"></div>
       </div>
    </div>
-
-  
-
-   
-   
 </div>
-</div></div>
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-{% endblock %}
+</div>
+</div>
+<script src="{% static 'script.js' %}"></script>
+{% endblock %}</body>
+
+</html>
