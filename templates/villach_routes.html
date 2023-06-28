@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-
+{% load static %}
 
 {% block content %}
 <div class="background"  >
@@ -12,13 +12,13 @@
         <!-- view saved routes from the 'Villach ' route. See start ime and end time -->
         {% for route in routes %}
         <a href="{% url 'sitepostdetailroute' route.slug %}" class="card" style="margin-bottom: 10px;">
-          <div class="card" style="margin-bottom: 10px;">  
+           
             <div class="card-body">
               <h5 class="card-title">Rider: {{ route.name }}</h5>
               <p>Start Time: {{ route.start_time }}</p>
               <p>End Time: {{ route.end_time }}</p>
             </div>
-          </div>
+          
         </a>
         {% endfor %}
       </div>
@@ -29,9 +29,6 @@
     </div>
   </div>
 </div>
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTcR7zZ261S2sxhPtcnbGodSfbKWcVFWo&libraries=places"></script>
-
-
-<script src="../static/maps2.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTcR7zZ261S2sxhPtcnbGodSfbKWcVFWo&libraries=places"></script>
+<script src="{% static 'maps1.js' %}"></script>
 {% endblock %}

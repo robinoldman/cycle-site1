@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 <!-- contnt section of the template -->
 
@@ -39,12 +39,8 @@
   </div>
 </div>
 
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
-<!-- Includ the Google Maps API script -->
-
-<script src="../static/maps1.js"></script>
-<!-- Includ the custom JavaScript file -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTcR7zZ261S2sxhPtcnbGodSfbKWcVFWo&libraries=places"></script>
+<script src="{% static 'maps.js' %}"></script>
 
 {% endblock %}
 <!-- End of content block -->
