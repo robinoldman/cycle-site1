@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 <h1 class="title">Cycle Apine Team</h1><br><br>
 <!-- image and names for John worker-->
@@ -6,13 +7,13 @@
   <div class="row">
     <div class="col-12 col-sm-6 col-md-6 col-lg-3">
       <div class="placeholder">
-        <img src="../static/images/john1.png" class="img-responsive" alt="Generic placeholder thumbnail" width="200" height="200">
+        <img src="{% static 'images/john1.png' %}" class="img-responsive" alt="Generic placeholder thumbnail" width="200" height="200">
         <h4><br>John Denny</h4>
         <span class="text-muted">CEO<br><br></span>
       </div>
     </div>
     <!-- image and names for Sue worker-->
-    {% load static %}
+    
 
     <div class="col-12 col-sm-6 col-md-6 col-lg-3">
       <div class="placeholder">
@@ -24,7 +25,7 @@
     <!-- image and names for Sue worker-->
     <div class="col-12 col-sm-6 col-md-6 col-lg-3">
       <div class="placeholder">
-        <img src="../static/images/suet.png" class="img-responsive" alt="Generic placeholder thumbnail" width="200" height="200">
+        <img src="{% static 'images/suet.png' %}" class="img-responsive" alt="Generic placeholder thumbnail" width="200" height="200">
         <h4><br>Sue Tedford</h4>
         <span class="text-muted">Project Manager<br><br></span>
       </div>
@@ -32,7 +33,7 @@
     <!-- image and names for Robin worker-->
     <div class="col-12 col-sm-6 col-md-6 col-lg-3">
       <div class="placeholder">
-        <img src="../static/images/robin1.png" class="img-responsive" alt="Generic placeholder thumbnail" width="200" height="200">
+        <img src="{% static 'images/robin1.png' %}" class="img-responsive" alt="Generic placeholder thumbnail" width="200" height="200">
         <h4><br>Robin Oldman</h4>
         <span class="text-muted">Project Manager<br><br></span>
       </div>
