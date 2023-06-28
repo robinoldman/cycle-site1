@@ -1,3 +1,4 @@
+/*
 window.onload = function () {
     // Initialize and add the map
     let map;
@@ -105,7 +106,7 @@ window.onload = function () {
 
     initMap();
 };
-
+*/
 /*-------------route panels*/
 
 const panels = document.querySelectorAll('.panel')
