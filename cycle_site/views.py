@@ -256,7 +256,7 @@ class DeleteComment(LoginRequiredMixin, View):
             get_object_or_404(SiteRouteComment, 
             pk=pk, user=request.user))
         comment.delete()
-        return redirect("own_route_post")
+        return redirect("main")
 
 class EditComment(LoginRequiredMixin, View):
     def post(self, request, pk):
