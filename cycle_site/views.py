@@ -180,7 +180,7 @@ def map_view(request):
 
     return render(request, 'main.html')
 
-@login_required
+
 def generate_unique_slug(slug):
     """
     Generates a unique slug by appending a number to the original slug if it already exists.
