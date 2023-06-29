@@ -174,7 +174,19 @@ Agile tool can be found here: [Aglie](https://github.com/robinoldman/cycle-site1
 10. Django allauth: Employed for account registration and authentication functionality.
 11. Django Crispy Forms: Used to simplify the rendering of forms in the application.
 
+### Frameworks, Libraries & Programs Used
 
+1. Django: Utilized as the framework to facilitate rapid and secure development of the application.
+2. Google Fonts: Incorporated to implement the Lato font in the project.
+3. Font Awesome: Employed to enhance aesthetics and user experience by adding icons.
+4. Bootstrap: Utilized to create responsive web pages.
+5. Git and GitHub: Employed for version control, using the Gitpod terminal to commit changes to Git and push them to GitHub. Additionally, GitHub was used for agile development by utilizing User Stories (GitHub Issues) and tracking progress on a Kanban board.
+6. Gunicorn: Used as the web server to run Django on Heroku.
+7. psycopg2: A database adapter used to support the connection to the PostgreSQL database.
+8. Cloudinary: Utilized as a storage solution for the application's images.
+9. Summernote: Incorporated to provide a WYSIWYG (What You See Is What You Get) editing experience on the Hike editing screen.
+10. Django allauth: Employed for account registration and authentication functionality.
+11. Django Crispy Forms: Used to simplify the rendering of forms in the application.
 
 ### Validator Testing
 
