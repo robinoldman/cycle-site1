@@ -468,7 +468,13 @@ background-color: #ccc;
 }
 
 .container {
-    min-height: 100vh; /* Ensure the container takes up at least the full viewport height */
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+  }
+
+.container-intro {
+   
     display: flex;
     flex-direction: column;
   }
@@ -608,7 +614,7 @@ ffc
 
 /*----------set route*/
 
-#time-input{
+.time-input{
     padding: 1px;
     padding-left: 20px ;
     padding-right: 20px ;
@@ -628,6 +634,7 @@ ffc
     font-size: 25px;
     margin-right: 50px;
     margin-left: 50px;
+    font-family: Lato,  sans-serif ; 
     
 }
 
