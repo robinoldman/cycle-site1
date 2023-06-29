@@ -89,28 +89,28 @@ By partnering with this website, we hope to encourage more tourists to visit the
    - The navigation bar ensures consistent appearance and placement across all pages, facilitating easy and intuitive navigation. It comprises a logo and links to the Home page, new routes, and set routes. For non-signed-in users, there are additional links to the Register and Sign In pages. Once signed in, users can access the Home page along with links to new routes and set routes. The navigation bar also displays the active username and a user icon. It adapts responsively to different screen sizes, transforming into a "burger" menu style on smaller screens.
 • **F02 Landing Page Image and Text**
    - Located at the top of the landing page (home page), there is a visually appealing section featuring a captivating photograph accompanied by text overlay. This combination effectively communicates the purpose of the website as a platform for discovering new and exciting cycle routes.
-   ![Image home and nav](static/readmeimages%20/homepageheronav.png)
+   ![home](static/readmeimages%20/homepageheronav.png)
 • 
 
 •**F03 Set Routes**
    - Further down on the landing/home page, a list of cycle routes is shown. Each summary gives an image of the hike and a title,  At a glance, the user can quickly decide if this is a hike that might appeal to them. Each route picture expands when clicked with the buttons then becoming active. The user can then decide to view extra detail on the route and log a time or view previous times.
 
-    ![Image home and nav](static/readmeimages%20/setroutes.png)
+    ![set routes(static/readmeimages%20/setroutes.png)
 
 • **F04 Routes Detail Page**
    - When a user clicks on a cycle summary title on the home page, they are brought to the Cycle Detail page for the clicked cycle. Here the user is shown a full description of the cycle route, the location for the route, the difficulty rating, a map, and estimated duration. Only users who are signed in can comment on a route.
 
-     ![Image home and nav](static/readmeimages%20/setroutewithmap.png
+     ![setroute](static/readmeimages%20/setroutewithmap.png
 
 • **F05 Comment on a set Route**
    - In order to comment on a route, a user must be signed in. A comment can be added on any time that users have recorded or new cycle route that users have logged. The user enters their comment in a text box under the cycle description and clicks on Submit. The comment must be approved by the admin user before it will be visible. To approve comments, the admin user logs in to the admin pages, opens the Comments table, selects the comment(s) to be approved, chooses the 'Approve Comments' action from the drop-down menu, and clicks 'Go'.
 
-    ![Image home and nav](static/readmeimages%20/publisedownroute.png
+    ![publise](static/readmeimages%20/publisedownroute.png
     )
 • **F08 My Routes Page**
    - In order to access the My Routes page, a user must be signed in. The My Routes page provides a convenient place for the user to write down their own route to share with the community. Users are then able to comment on one another's routes by clicking on the post.
 
-    ![Image home and nav](static/readmeimages%20/postownroute.png
+    ![postroute](static/readmeimages%20/postownroute.png
 
 • **F09 User Authentication**
    - The application provides the following user authentication-related functions:
@@ -129,7 +129,7 @@ By partnering with this website, we hope to encourage more tourists to visit the
 • **F12 Visual Route Maps**
    - There is a visual route map for each set route. This map shows a start and end point with a route between these points.
 
-    ![Image home and nav](static/readmeimages%20/setroutewithmap.png)
+    ![map](static/readmeimages%20/setroutewithmap.png)
 
 • **F13 On-screen Messages**
    - An on-screen message appears whenever a user has written a comment to tell the user their comment is waiting for approval.
