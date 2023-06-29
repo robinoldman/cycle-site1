@@ -270,27 +270,36 @@ After completing and testing the code changes on localhost, follow these steps t
 
 Please note that the above instructions are a general guideline for deploying a Django project on Heroku. You may need to adapt the steps according to your specific project configuration and requirements.
 
-## Design
 
-...
 
-## Planning
 
-...
+### Credits
 
-## Technologies Used
+#### Code
 
-...
+- A lot of the coding and testing relies on information in the "Hello Django" and "I Think Therefore I Blog" walkthroughs in the Code Institute course.
+- Information on how to use a foreign key: [Django Documentation - Many-to-One Relationships](https://docs.djangoproject.com/en/4.2/topics/db/examples/many_to_one/)
+- Information on how to order models: [Django Documentation - Model Meta options](https://docs.djangoproject.com/en/4.2/ref/models/options/)
+- Google Maps API: [Google Maps API Documentation](https://developers.google.com/maps)
+- Code to make sliding panels: [Udemy Course - Sliding Panels](https://www.udemy.com/home/my-courses/learning/)
+- Code to help me with understanding slugs: [Learn Django - Django Slug Tutorial](https://learndjango.com/tutorials/django-slug-tutorial)
 
-## Testing
+#### Media
 
-...
+- The Lato font used was imported from [Google Fonts](https://fonts.google.com/).
+- Font Awesome was used for social icons and bike icon: [Font Awesome](https://fontawesome.com/).
 
-## Deployment
+#### Mountain Images
 
-...
+- [Pexels - Empty road along the mountain](https://www.pexels.com/photo/empty-road-along-the-mountain-2739013/)
+- [Pexels - Brown logs on grass field](https://www.pexels.com/photo/brown-logs-on-grass-field-358532/)
+- [Pexels - Alps](https://www.pexels.com/search/alps/)
+- [Pexels - Bird's-eye view photography of mountains](https://www.pexels.com/photo/bird-s-eye-view-photography-of-mountains-552785/)
+- [Pexels - Person walking on hill](https://www.pexels.com/photo/person-walking-on-hill-554609/)
 
-## Credits
+### Acknowledgments
+
+- Thank you to my mentor Brian Macharia for his continuing help and feedback.
 
 ...
 import os
@@ -339,4 +348,3 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 ---
 
-Happy coding!
