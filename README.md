@@ -56,7 +56,7 @@ Cycle Alpine is a site that allows users to view and record their times on speci
    - The navigation bar ensures consistent appearance and placement across all pages, facilitating easy and intuitive navigation. It comprises a logo and links to the Home page, new routes, and set routes. For non-signed-in users, there are additional links to the Register and Sign In pages. Once signed in, users can access the Home page along with links to new routes and set routes. The navigation bar also displays the active username and a user icon. It adapts responsively to different screen sizes, transforming into a "burger" menu style on smaller screens.
 • **F02 Landing Page Image and Text**
    - Located at the top of the landing page (home page), there is a visually appealing section featuring a captivating photograph accompanied by text overlay. This combination effectively communicates the purpose of the website as a platform for discovering new and exciting cycle routes.
-   ![Image home and nav](readmeimages/homepageheronav.jpg)
+   ![Image home and nav](readmeimages/homepageheronav.png)
 • **F03 Set Routes**
 • **F03 Set Routes**
    - Further down on the landing/home page, a list of cycle routes is shown. Each summary gives an image of the hike, a title, details on distance and estimated duration, and an image rating the difficulty of the route - easy/moderate/hard. At a glance, the user can quickly decide if this is a hike that might appeal to them. Each route picture expands when clicked with the buttons then becoming active. The user can then decide to view extra detail on the route and log a time or view previous times.
