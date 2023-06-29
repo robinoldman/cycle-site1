@@ -188,9 +188,12 @@ def generate_unique_slug(slug):
     """
     original_slug = slug
     num = 1
+    
+    # Check if the slug already exists in the OwnRoute objects
     while OwnRoute.objects.filter(slug=slug).exists():
-        slug = f'{original_slug}-{num}'
+        slug = f'{original_slug}-{num}'  # Append a number to the original slug
         num += 1
+    
     return slug
 
 
@@ -202,10 +205,15 @@ class SitePostDetailRoute(View):
     """
 
     def get(self, request, slug, *args, **kwargs):
+        # Retrieve the OwnRoute object based on the provided slug
         post = get_object_or_404(Route, slug=slug)
+        
+        # Retrieve the approved comments associated with the post, ordered by creation time
         comments = (
             post.route_comments.filter(approved=True)
-            .order_by("-created_on"))
+            .order_by("-created_on")
+        )
+        
         liked = False
 
         return render(
@@ -220,58 +228,72 @@ class SitePostDetailRoute(View):
             },
         )
 
-    def post(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(Route, slug=slug)
-        comments = (
-            post.route_comments.filter(approved=True)
-            .order_by("-created_on"))
-        liked = False
-        # if post.likes.filter(id=self.request.user.id).exists():
-        #     liked = True
 
-        comment_form = SiteRouteCommentForm(data=request.POST)
-        if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
-            comment.post = post
-            comment.name = request.user
-            comment.user = request.user
-            comment.save()
+def post(self, request, slug, *args, **kwargs):
+    # Retrieve the post object based on the provided slug
+    post = get_object_or_404(Route, slug=slug)
+    
+    # Retrieve the approved comments associated with the post, ordered by creation time
+    comments = (
+        post.route_comments.filter(approved=True)
+        .order_by("-created_on")
+    )
+    
+    liked = False
+    
+    comment_form = SiteRouteCommentForm(data=request.POST)
+    
+    if comment_form.is_valid():  # Check if the form data is valid
+        comment = comment_form.save(commit=False)
+        comment.post = post  # Set the post field of the comment to the retrieved post object
+        comment.name = request.user  # Set the name field of the comment to the current user
+        comment.user = request.user
+        comment.save()  # Save the comment object to the database
 
-            return render(
-                request,
-                "site_post_comments.html",
-                {
-                    "post": post,
-                    "comments": comments,
-                    "commented": True,
-                    "liked": liked,
-                    "comment_form": SiteRouteCommentForm()
-                },
-            )
+        return render(
+            request,
+            "site_post_comments.html",
+            {
+                "post": post,
+                "comments": comments,
+                "commented": True,
+                "liked": liked,
+                "comment_form": SiteRouteCommentForm()
+            },
+        )
 
 
 class DeleteComment(LoginRequiredMixin, View):
     def post(self, request, pk):
-        comment = (
-            get_object_or_404(SiteRouteComment, 
-            pk=pk, user=request.user))
+        # Retrieve the comment object based on the provided primary key (pk) and the user
+        comment = get_object_or_404(SiteRouteComment, pk=pk, user=request.user)
+        
+        # Delete the comment object
         comment.delete()
+        
         return redirect("main")
+
 
 class EditComment(LoginRequiredMixin, View):
     def post(self, request, pk):
+        # Retrieve the comment object based on the provided primary key (pk) and the user
         comment = get_object_or_404(SiteRouteComment, pk=pk, user=request.user)
+        
         if request.method == 'POST':
             form = SiteRouteCommentForm(request.POST, instance=comment)
+            
             if form.is_valid():
                 form.save()
                 return redirect("sitepostdetailroute", slug=comment.post.slug)
         else:
             form = SiteRouteCommentForm(instance=comment)
+        
         return render(
-            request, 
-            "site_post_comments.html", 
-            {"form": form, "comment": comment})
+            request,
+            "site_post_comments.html",
+            {"form": form, "comment": comment}
+        )
+
 
 
 class PostDetailRoute(View):
@@ -281,43 +303,58 @@ class PostDetailRoute(View):
     using the post_comments.html template.
     """
 
-    def get(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(OwnRoute, slug=slug)
-        comments = (
-            post.route_comments
-            .filter(approved=True)
-            .order_by("-created_on"))
-        liked = False
-        comment_form = RouteCommentForm()  # Define the comment_form variable
+def get(self, request, slug, *args, **kwargs):
+    # Retrieve the post object based on the provided slug
+    post = get_object_or_404(OwnRoute, slug=slug)
+    
+    # Retrieve the approved comments associated with the post, ordered by creation time
+    comments = (
+        post.route_comments
+        .filter(approved=True)
+        .order_by("-created_on")
+    )
+    
+    liked = False  # Initialize the 'liked' variable as False
+    
+    comment_form = RouteCommentForm()  # Define the comment_form variable
+    
+    # Render the template with the post, comments, and comment form
+    return render(
+        request,
+        "post_comments.html",
+        {
+            "post": post,
+            "comments": comments,
+            "commented": False,
+            "liked": liked,
+            "comment_form": comment_form
+        },
+    )
 
-        return render(
-            request,
-            "post_comments.html",
-            {
-                "post": post,
-                "comments": comments,
-                "commented": False,
-                "liked": liked,
-                "comment_form": comment_form
-            },
-        )
+def post(self, request, slug, *args, **kwargs):
+    # Retrieve the post object based on the provided slug
+    post = get_object_or_404(OwnRoute, slug=slug)
+    
+    # Retrieve the approved comments associated with the post, ordered by creation time
+    comments = (
+        post.route_comments
+        .filter(approved=True)
+        .order_by("-created_on")
+    )
+    
+    liked = False  # Initialize the 'liked' variable as False
+    
+    # Create a comment form instance with the data from the POST request
+    comment_form = RouteCommentForm(data=request.POST)
+    
+    if comment_form.is_valid():  # Check if the form data is valid
+        comment = comment_form.save(commit=False)
+        comment.post = post  # Set the post field of the comment to the retrieved post object
+        comment.name = request.user  # Set the name field of the comment to the current user
+        comment.save()  # Save the comment object to the database
+    else:
+        comment_form = RouteCommentForm()  # Create a new empty comment form
+    
+    # Redirect to the post detail page after comment submission
+    return redirect("own_route_post", slug=slug)
 
-    def post(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(OwnRoute, slug=slug)
-        comments = (
-            post.route_comments
-            .filter(approved=True)
-            .order_by("-created_on"))
-        liked = False
-
-        comment_form = RouteCommentForm(data=request.POST)
-        if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
-            comment.post = post
-            comment.name = request.user
-            comment.save()
-        else:
-            comment_form = RouteCommentForm()
-
-        # Redirect to the post detail page after comment submission
-        return redirect("own_route_post", slug=slug)
