@@ -202,11 +202,14 @@ class SitePostDetailRoute(View):
     """
 
     def get(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(Route, slug=slug)
+        """
+        Handles the GET request to display the post details and comments.
+        """
+        post = get_object_or_404(Route, slug=slug)  # Get the post based on the provided slug
         comments = (
             post.route_comments.filter(approved=True)
-            .order_by("-created_on"))
-        liked = False
+            .order_by("-created_on"))  # Retrieve the approved comments associated with the post
+        liked = False  # Set the initial liked status to False
 
         return render(
             request,
@@ -214,23 +217,25 @@ class SitePostDetailRoute(View):
             {
                 "post": post,
                 "comments": comments,
-                "commented": False,
-                "liked": liked,
-                "comment_form": SiteRouteCommentForm()
+                "commented": False,  # Flag indicating if a comment was submitted
+                "liked": liked,  # Flag indicating if the post is liked by the user
+                "comment_form": SiteRouteCommentForm()  # Initialize the comment form
             },
         )
 
     def post(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(Route, slug=slug)
+        """
+        Handles the POST request to save a new comment for the post.
+        """
+        post = get_object_or_404(Route, slug=slug)  # Get the post based on the provided slug
         comments = (
             post.route_comments.filter(approved=True)
-            .order_by("-created_on"))
-        liked = False
-        # if post.likes.filter(id=self.request.user.id).exists():
-        #     liked = True
+            .order_by("-created_on"))  # Retrieve the approved comments associated with the post
+        liked = False  # Set the initial liked status to False
 
-        comment_form = SiteRouteCommentForm(data=request.POST)
+        comment_form = SiteRouteCommentForm(data=request.POST)  # Create a comment form with the submitted data
         if comment_form.is_valid():
+            # If the comment form is valid, create a new comment object and save it to the database
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.name = request.user
@@ -243,36 +248,45 @@ class SitePostDetailRoute(View):
                 {
                     "post": post,
                     "comments": comments,
-                    "commented": True,
-                    "liked": liked,
-                    "comment_form": SiteRouteCommentForm()
+                    "commented": True,  # Flag indicating that a comment was successfully submitted
+                    "liked": liked,  # Flag indicating if the post is liked by the user
+                    "comment_form": SiteRouteCommentForm()  # Initialize a new comment form
                 },
             )
 
 
 class DeleteComment(LoginRequiredMixin, View):
     def post(self, request, pk):
-        comment = (
-            get_object_or_404(SiteRouteComment, 
-            pk=pk, user=request.user))
-        comment.delete()
-        return redirect("main")
+        """
+        Handles the POST request to delete a comment.
+        """
+        comment = get_object_or_404(SiteRouteComment, pk=pk, user=request.user)  # Get the comment based on the provided primary key (pk) and user
+        comment.delete()  # Delete the comment
+        return redirect("main")  # Redirect to the "main" page after deleting the comment
 
 class EditComment(LoginRequiredMixin, View):
     def post(self, request, pk):
-        comment = get_object_or_404(SiteRouteComment, pk=pk, user=request.user)
-        if request.method == 'POST':
-            form = SiteRouteCommentForm(request.POST, instance=comment)
-            if form.is_valid():
-                form.save()
-                return redirect("sitepostdetailroute", slug=comment.post.slug)
-        else:
-            form = SiteRouteCommentForm(instance=comment)
-        return render(
-            request, 
-            "site_post_comments.html", 
-            {"form": form, "comment": comment})
+        """
+        Handles the POST request to edit/update a comment.
+        """
+        comment = get_object_or_404(SiteRouteComment, pk=pk, user=request.user)  # Get the comment based on the provided primary key (pk) and user
 
+        if request.method == 'POST':
+            form = SiteRouteCommentForm(request.POST, instance=comment)  # Create a form with the submitted data and instance of the comment
+            if form.is_valid():
+                form.save()  # Save the updated comment
+                return redirect("sitepostdetailroute", slug=comment.post.slug)  # Redirect to the post detail page of the updated comment
+        else:
+            form = SiteRouteCommentForm(instance=comment)  # Create a form with the existing comment instance
+
+        return render(
+            request,
+            "site_post_comments.html",
+            {
+                "form": form,  # Pass the form to the template for displaying the comment edit form
+                "comment": comment  # Pass the comment object to the template
+            },
+        )
 
 class PostDetailRoute(View):
     """
@@ -282,13 +296,16 @@ class PostDetailRoute(View):
     """
 
     def get(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(OwnRoute, slug=slug)
+        """
+        Handles the GET request to display the post details and comments.
+        """
+        post = get_object_or_404(OwnRoute, slug=slug)  # Get the post based on the provided slug
         comments = (
             post.route_comments
             .filter(approved=True)
-            .order_by("-created_on"))
+            .order_by("-created_on"))  # Retrieve the approved comments associated with the post
         liked = False
-        comment_form = RouteCommentForm()  # Define the comment_form variable
+        comment_form = RouteCommentForm()  # Create an instance of the comment form
 
         return render(
             request,
@@ -296,9 +313,9 @@ class PostDetailRoute(View):
             {
                 "post": post,
                 "comments": comments,
-                "commented": False,
-                "liked": liked,
-                "comment_form": comment_form
+                "commented": False,  # Flag indicating if a comment was submitted
+                "liked": liked,  # Flag indicating if the post is liked by the user
+                "comment_form": comment_form  # Pass the comment form to the template
             },
         )
 
