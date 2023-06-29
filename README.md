@@ -95,7 +95,7 @@ By partnering with this website, we hope to encourage more tourists to visit the
 •**F03 Set Routes**
    - Further down on the landing/home page, a list of cycle routes is shown. Each summary gives an image of the hike and a title,  At a glance, the user can quickly decide if this is a hike that might appeal to them. Each route picture expands when clicked with the buttons then becoming active. The user can then decide to view extra detail on the route and log a time or view previous times.
 
-    ![setroutes](/static/readmeimages%20/setroutes1.png)
+    ![set](static/readmeimages%20/setroutes1.png)
 
 • **F04 Routes Detail Page**
    - When a user clicks on a cycle summary title on the home page, they are brought to the Cycle Detail page for the clicked cycle. Here the user is shown a full description of the cycle route, the location for the route, the difficulty rating, a map, and estimated duration. Only users who are signed in can comment on a route.
