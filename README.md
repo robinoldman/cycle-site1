@@ -109,7 +109,7 @@ By partnering with this website, we hope to encourage more tourists to visit the
 • **F08 My Routes Page**
    - In order to access the My Routes page, a user must be signed in. The My Routes page provides a convenient place for the user to write down their own route to share with the community. Users are then able to comment on one another's routes by clicking on the post.
 
-    [route](https://github.com/robinoldman/cycle-site1/blob/main/static/readmeimages%20/postownroute.png)
+       ![route](static/readmeimages%20/postownroute.png)
 
 
 • **F09 User Authentication**
