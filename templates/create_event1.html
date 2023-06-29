@@ -3,40 +3,40 @@
 
 
 {% block content %}
-<div class="background-site-route"  >
+<div class="background-site-route">
     <div class="container">
-      <div class="row">
-        <h1>Millstatt Route</h1>
-        <div class="col-md-6">
-            <div id="route-details" class="card-route" style="margin-bottom: 10px;">  
-              <div class="card-body">
-                <!-- Route details card -->
-                <p>
-                  Difficulty: Easy<br>
-                  Distance: 10k
-                </p>
-                <!-- Route description -->
-                <p>The Millstatt route offers a mesmerising journey through picturesque alpine landscapes, 
-                    immersing cyclists in the breathtaking beauty of the terrain. This cycling route showcases 
-                    a harmonious blend of towering mountains, lush valleys, and serene lakes, creating a captivating backdrop 
-                    at every turn.<br><br> As you pedal along the route, you'll be enchanted by the pristine nature surrounding you, 
-                    with vibrant meadows, dense forests, and crystal-clear streams. </p>
-                
-              </div>
+        <div class="row">
+            <h1>Millstatt Route</h1>
+            <div class="col-md-6">
+                <div id="route-details" class="card-route" style="margin-bottom: 10px;">
+                    <div class="card-body">
+                        <!-- Route details card -->
+                        <p>
+                            Difficulty: Easy<br>
+                            Distance: 10k
+                        </p>
+                        <!-- Route description -->
+                        <p>The Millstatt route offers a mesmerising journey through picturesque alpine landscapes,
+                            immersing cyclists in the breathtaking beauty of the terrain. This cycling route showcases
+                            a harmonious blend of towering mountains, lush valleys, and serene lakes, creating a captivating backdrop
+                            at every turn.<br><br> As you pedal along the route, you'll be enchanted by the pristine nature surrounding you,
+                            with vibrant meadows, dense forests, and crystal-clear streams. </p>
+
+                    </div>
+                </div>
+
             </div>
-          
+
+            <div class="col-md-6">
+                <!-- Map container -->
+                <div id="map"></div>
+            </div>
         </div>
-
-      <div class="col-md-6">
-        <!-- Map container -->
-        <div id="map"></div>
-      </div>
     </div>
-  </div>
 </div>
-  <!-- Google Maps API -->
+<!-- Google Maps API -->
 
-  
+
 <!-- Google Maps API -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTcR7zZ261S2sxhPtcnbGodSfbKWcVFWo&libraries=places"></script>
 <script src="{% static 'maps.js' %}"></script>

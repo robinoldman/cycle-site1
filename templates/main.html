@@ -5,116 +5,116 @@
 {% block content %}
 <!-- hero section  -->
 <section class="hero">
-   <div class="hero-inner">
-      <img src="{% static 'images/hero(2).jpg' %}" alt="Austria Image">
-      <div class="overlay"></div>
-      <div class="text-overlay">
-         <h1>Cycle Alpine</h1>
-         <h2>Come and discover Austria</h2>
-      </div>
-   </div>
+    <div class="hero-inner">
+        <img src="{% static 'images/hero(2).jpg' %}" alt="Austria Image">
+        <div class="overlay"></div>
+        <div class="text-overlay">
+            <h1>Cycle Alpine</h1>
+            <h2>Come and discover Austria</h2>
+        </div>
+    </div>
 </section>
 
 <div class="container-lg my-5">
-   <div class="row">
-      <!-- user route for user to create and publish own route  -->
-      <div class="col-12 col-md-6  mb-4">
-         <a href="{% url 'user_route' %}">
-            <div class="text-light image-container">
-               <img class="menu-image" src="{% static 'images/publishnew.jpg' %}" alt="new route Image">
-               <div class="overlay">
-                  <div class="overlay-content">publish a new route</div>
-               </div>
-            </div>
-         </a>
-      </div>
+    <div class="row">
+        <!-- user route for user to create and publish own route  -->
+        <div class="col-12 col-md-6  mb-4">
+            <a href="{% url 'user_route' %}">
+                <div class="text-light image-container">
+                    <img class="menu-image" src="{% static 'images/publishnew.jpg' %}" alt="new route Image">
+                    <div class="overlay">
+                        <div class="overlay-content">publish a new route</div>
+                    </div>
+                </div>
+            </a>
+        </div>
 
-      <!-- user can log their own time -->
-      <div class="col-12 col-md-6  mb-4">
-         <a href="{% url 'route' %}">
-            <div class="text-light image-container">
-               <img class="menu-image" src="{% static 'images/logyour.jpg'  %}" alt="log your time">
-               <div class="overlay">
-                  <div class="overlay-content">log your time</div>
-               </div>
-            </div>
-         </a>
-      </div>
-      <!-- ability to see all route maps  -->
-      <div class="col-12 col-md-6 mb-4">
-         <a href="{% url 'own_route_post' %}">
-            <div class="text-light image-container">
-               <img class="menu-image" src="{% static 'images/back.jpg' %}" alt="log users routes">
-               <div class="overlay">
-                  <div class="overlay-content">view users' routes</div>
-               </div>
-            </div>
-         </a>
-      </div>
-      <!-- see the team behind the company -->
-      <div class="col-12 col-md-6 mb-4">
-         <a href="{% url 'team' %}">
-            <div class="text-light image-container">
-               <img class="menu-image" src="{% static 'images/our.jpg' %}" alt="our team">
-               <div class="overlay">
-                  <div class="overlay-content">Our team</div>
-               </div>
-            </div>
-         </a>
-      </div>
-   </div>
+        <!-- user can log their own time -->
+        <div class="col-12 col-md-6  mb-4">
+            <a href="{% url 'route' %}">
+                <div class="text-light image-container">
+                    <img class="menu-image" src="{% static 'images/logyour.jpg'  %}" alt="log your time">
+                    <div class="overlay">
+                        <div class="overlay-content">log your time</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- ability to see all route maps  -->
+        <div class="col-12 col-md-6 mb-4">
+            <a href="{% url 'own_route_post' %}">
+                <div class="text-light image-container">
+                    <img class="menu-image" src="{% static 'images/back.jpg' %}" alt="log users routes">
+                    <div class="overlay">
+                        <div class="overlay-content">view users' routes</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- see the team behind the company -->
+        <div class="col-12 col-md-6 mb-4">
+            <a href="{% url 'team' %}">
+                <div class="text-light image-container">
+                    <img class="menu-image" src="{% static 'images/our.jpg' %}" alt="our team">
+                    <div class="overlay">
+                        <div class="overlay-content">Our team</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
 </div>
 
 <div class="color-block1">
-   <!-- cards for each set route -->
-   <div class="icon-container-cards">
-      <i class="fa-solid fa-bicycle"></i>
-   </div>
-   <!-- card for Millstattt route includes link for route info, log time and look at previous times  -->
-   <div class="cards-heading">Discover our free planned routes! Each route is graded from easy to hard, offering stunning views. Get route information, time your own progress, and compare with others. Start exploring today!</div>
-   <div class="container_routes">
-      <div class="panel active" style="background-image: url('{% static 'images/panel4.jpg' %}')">
-         <h3>Millstatt Route</h3>
-         
-         <div class="d-grid gap-2 col-6 mx-auto">
-            <a href="{% url 'create_event1' %}" class="btn btn-outline-light">View Route</a>
-            <a href="{% url 'millstatt_routes' %}" class="btn btn-outline-light">View most recent times </a>
-            <a href="{% url 'route' %}" class="btn btn-outline-light">Log your own time</a>
-         </div>
-         <div class="overlay-routes"></div>
-      </div>
-      <!-- card for Wortersee route includes link for route info, log time and look at previous times  -->
-      <div class="panel" style="background-image: url('{% static 'images/panel1.jpg' %}')">
-         <h3>Wortersee</h3>
-         
-         <div class="d-grid gap-2 col-6 mx-auto">
-            <a href="{% url 'create_event3' %}" class="btn btn-outline-light">View Route</a>
-            <a href="{% url 'badkleinkircheim' %}" class="btn btn-outline-light">View most recent times </a>
-            <a href="{% url 'route' %}" class="btn btn-outline-light">Log your own time</a>
-         </div>
-         <div class="overlay-routes"></div>
-      </div>
-      <!-- card for Bad Kleinkirchem route includes link for route info, log time and look at previous times  -->
-      <div class="panel" style="background-image: url('{% static 'images/panel2.jpg' %}')">
-         
-         <div class="d-grid gap-2 col-6 mx-auto">
-            <a href="{% url 'create_event2' %}" class="btn btn-outline-light">View Route</a>
-            <a href="{% url 'villach' %}" class="btn btn-outline-light">View most recent times </a>
-            <a href="{% url 'route' %}" class="btn btn-outline-light">Log your own time</a>
-         </div>
-         <div class="overlay-routes"></div>
-      </div>
-      <!-- card for Villach route includes link for route info, log time and look at previous times  -->
-      <div class="panel" style="background-image: url('{% static 'images/panel3.jpg' %}')">
-         
-         <div class="d-grid gap-2 col-6 mx-auto">
-            <a href="{% url 'create_event' %}" class="btn btn-outline-light">View Route</a>
-            <a href="{% url 'wortersee' %}" class="btn btn-outline-light">View most recent times </a>
-            <a href="{% url 'route' %}" class="btn btn-outline-light">Log your own time</a>
-         </div>
-         <div class="overlay-routes"></div>
-      </div>
-   </div>
+    <!-- cards for each set route -->
+    <div class="icon-container-cards">
+        <i class="fa-solid fa-bicycle"></i>
+    </div>
+    <!-- card for Millstattt route includes link for route info, log time and look at previous times  -->
+    <div class="cards-heading">Discover our free planned routes! Each route is graded from easy to hard, offering stunning views. Get route information, time your own progress, and compare with others. Start exploring today!</div>
+    <div class="container_routes">
+        <div class="panel active" style="background-image: url('{% static 'images/panel4.jpg' %}')">
+            <h3>Millstatt Route</h3>
+
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <a href="{% url 'create_event1' %}" class="btn btn-outline-light">View Route</a>
+                <a href="{% url 'millstatt_routes' %}" class="btn btn-outline-light">View most recent times </a>
+                <a href="{% url 'route' %}" class="btn btn-outline-light">Log your own time</a>
+            </div>
+            <div class="overlay-routes"></div>
+        </div>
+        <!-- card for Wortersee route includes link for route info, log time and look at previous times  -->
+        <div class="panel" style="background-image: url('{% static 'images/panel1.jpg' %}')">
+            <h3>Wortersee</h3>
+
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <a href="{% url 'create_event3' %}" class="btn btn-outline-light">View Route</a>
+                <a href="{% url 'badkleinkircheim' %}" class="btn btn-outline-light">View most recent times </a>
+                <a href="{% url 'route' %}" class="btn btn-outline-light">Log your own time</a>
+            </div>
+            <div class="overlay-routes"></div>
+        </div>
+        <!-- card for Bad Kleinkirchem route includes link for route info, log time and look at previous times  -->
+        <div class="panel" style="background-image: url('{% static 'images/panel2.jpg' %}')">
+
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <a href="{% url 'create_event2' %}" class="btn btn-outline-light">View Route</a>
+                <a href="{% url 'villach' %}" class="btn btn-outline-light">View most recent times </a>
+                <a href="{% url 'route' %}" class="btn btn-outline-light">Log your own time</a>
+            </div>
+            <div class="overlay-routes"></div>
+        </div>
+        <!-- card for Villach route includes link for route info, log time and look at previous times  -->
+        <div class="panel" style="background-image: url('{% static 'images/panel3.jpg' %}')">
+
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <a href="{% url 'create_event' %}" class="btn btn-outline-light">View Route</a>
+                <a href="{% url 'wortersee' %}" class="btn btn-outline-light">View most recent times </a>
+                <a href="{% url 'route' %}" class="btn btn-outline-light">Log your own time</a>
+            </div>
+            <div class="overlay-routes"></div>
+        </div>
+    </div>
 </div>
 
 <script src="{% static 'script.js' %}"></script>

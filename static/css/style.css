@@ -626,9 +626,12 @@ ffc
 .own-route-intro{
     color: black;
     font-size: 25px;
+    margin-right: 50px;
+    margin-left: 50px;
     
-    font-family: Lato, sans-serif;
 }
+
+
 
 .background-form {
     background-image: url("https://images.pexels.com/photos/552785/pexels-photo-552785.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");

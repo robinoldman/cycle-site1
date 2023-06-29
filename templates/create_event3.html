@@ -3,43 +3,42 @@
 
 
 {% block content %}
-<div class="background-site-route" >
+<div class="background-site-route">
     <div class="container">
-      <div class="row">
-        <h1>Bad Wortersee Route</h1>
-        <div class="col-md-6">
+        <div class="row">
+            <h1>Bad Wortersee Route</h1>
+            <div class="col-md-6">
 
-          <!-- Route details card -->
-            <div id="route-details" class="card-route" style="margin-bottom: 10px;">  
-              <div class="card-body">
-                
-                <p>
-                  Difficulty: Easy<br>
-                  Distance: 10k
-                </p>
-                <!-- Route description -->
+                <!-- Route details card -->
+                <div id="route-details" class="card-route" style="margin-bottom: 10px;">
+                    <div class="card-body">
 
-                <p>The Wortersee route in the Austrian Alps offers a unique cycling experience 
-                    that is sure to leave you spellbound. As you embark on this captivating journey, 
-                    you'll be greeted by the serene beauty of the alpine terrain.<br><br> The route takes 
-                    you along the shores of the picturesque Wortersee Lake, where shimmering 
-                    turquoise waters mirror the surrounding majestic mountains. 
-                    
-                
-              </div>
+                        <p>
+                            Difficulty: Easy<br>
+                            Distance: 10k
+                        </p>
+                        <!-- Route description -->
+
+                        <p>The Wortersee route in the Austrian Alps offers a unique cycling experience
+                            that is sure to leave you spellbound. As you embark on this captivating journey,
+                            you'll be greeted by the serene beauty of the alpine terrain.<br><br> The route takes
+                            you along the shores of the picturesque Wortersee Lake, where shimmering
+                            turquoise waters mirror the surrounding majestic mountains.
+
+
+                    </div>
+                </div>
+
             </div>
-          
-        </div>
 
-      <div class="col-md-6">
-        <!-- Map container -->
-        <div id="map"></div>
-      </div>
+            <div class="col-md-6">
+                <!-- Map container -->
+                <div id="map"></div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 <!-- Google Maps API -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTcR7zZ261S2sxhPtcnbGodSfbKWcVFWo&libraries=places"></script>
 <script src="{% static 'maps.js' %}"></script>
 {% endblock %}
-
