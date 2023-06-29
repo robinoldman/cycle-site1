@@ -105,11 +105,12 @@ By partnering with this website, we hope to encourage more tourists to visit the
 • **F05 Comment on a set Route**
    - In order to comment on a route, a user must be signed in. A comment can be added on any time that users have recorded or new cycle route that users have logged. The user enters their comment in a text box under the cycle description and clicks on Submit. The comment must be approved by the admin user before it will be visible. To approve comments, the admin user logs in to the admin pages, opens the Comments table, selects the comment(s) to be approved, chooses the 'Approve Comments' action from the drop-down menu, and clicks 'Go'.
 
-    ![publise](/static/readmeimages%20/publisedownroute1.png)
+    [publise](https://github.com/robinoldman/cycle-site1/blob/main/static/readmeimages%20/publisedownroute.png)
 • **F08 My Routes Page**
    - In order to access the My Routes page, a user must be signed in. The My Routes page provides a convenient place for the user to write down their own route to share with the community. Users are then able to comment on one another's routes by clicking on the post.
 
-    ![postroute](/static/readmeimages%20/postownroute1.png)
+    [route](https://github.com/robinoldman/cycle-site1/blob/main/static/readmeimages%20/postownroute.png)
+
 
 • **F09 User Authentication**
    - The application provides the following user authentication-related functions:
@@ -128,7 +129,7 @@ By partnering with this website, we hope to encourage more tourists to visit the
 • **F12 Visual Route Maps**
    - There is a visual route map for each set route. This map shows a start and end point with a route between these points.
 
-    ![map](static/readmeimages%20/setroutewithmap.png)
+      ![setroute](static/readmeimages%20/setroutewithmap.png)
 
 • **F13 On-screen Messages**
    - An on-screen message appears whenever a user has written a comment to tell the user their comment is waiting for approval.
