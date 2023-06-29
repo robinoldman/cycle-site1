@@ -12,12 +12,16 @@ class OwnRoute(models.Model):
     Represents a user-defined route.
     """
     name = models.CharField(max_length=80)
-    slug = models.SlugField(max_length=200, unique=True, null=False)  # Include the slug field
+    slug = models.SlugField(max_length=200, unique=True, null=False)  
     start_point = models.CharField(max_length=80)
     end_point = models.CharField(max_length=80)
     difficulty_rating = models.CharField(max_length=80)
     description = models.TextField(max_length=300)
     image = models.ImageField(default='enter image')
+    created_at = models.DateTimeField(auto_now_add=True) 
+    
+    class Meta:
+        ordering = ["created_at"]
 
     def __str__(self):
         return self.name
@@ -59,12 +63,18 @@ class Route(models.Model):
     slug = models.SlugField(max_length=200, unique=True, null=True) 
     start_time = models.TimeField()
     end_time = models.TimeField()
+    created_at = models.DateTimeField(auto_now_add=True) 
+    
+   
     ROUTE_CHOICES = (
         ('milstatt', 'Milstatt'),
         ('bad_kleikircheim', 'Bad Kleikircheim'),
         ('villach', 'Villach'),
         ('wortersee', 'Wortersee'),
-    )
+    ) 
+    
+    class Meta:
+        ordering = ["created_at"]
     route = models.CharField(max_length=20, choices=ROUTE_CHOICES)
 
     def __str__(self):

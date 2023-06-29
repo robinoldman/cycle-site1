@@ -11,7 +11,7 @@
     {% csrf_token %}
     <div class="background-form">
         <div class="own-route-intro">
-            Type in your route start time and end time. Cant be bothered to type in you time?
+            Type in your route start time and end time. Can't be bothered to type in your time?
             No worries just hit our 'start time' button when you set off and hit the 'stop time' when you
             reach your destination to see how you compare to others!
         </div>
@@ -25,7 +25,7 @@
                 </div>
             </div>
             <!-- input for entering start time -->
-            <div clas="time-input" class="row justify-content-center">
+            <div class="row justify-content-center">
                 <div class="col-md-6 mb-2">
                     <label for="id_start_time" class="form-group"></label>
                     <input type="time" id="id_start_time" name="start_time" class="form-control">
@@ -33,14 +33,14 @@
             </div>
 
             <!-- input for entering end time -->
-            <div id="time-input" class="row justify-content-center">
+            <div  class="row justify-content-center">
                 <div class="col-md-6 mb-2">
                     <label for="id_end_time" class="form-group"></label>
                     <input type="time" id="id_end_time" name="end_time" class="form-control">
                 </div>
             </div>
             <!-- input for entering route drop down menu -->
-            <div id="time-input" class="row justify-content-center">
+            <div  class="row justify-content-center">
                 <div class="col-md-6">
                     <label for="id_route" class="form-group"></label>
                     <select id="id_route" name="route" class="form-control">
@@ -68,7 +68,7 @@
         </div>
 
 </form>
-
+</div>
 <script>
     function getCurrentTimeWithSeconds() {
         var now = new Date();
