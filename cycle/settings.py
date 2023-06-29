@@ -30,10 +30,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['cycle.herokuapp.com', 'localhost',
-                 '8000-robinoldman-cyclesite1-63l3vn7ilh8.ws-eu101.gitpod.io']
+                 '8000-robinoldman-cyclesite1-yiekc5a8etl.ws-eu101.gitpod.io']
 
 
 # Application definition
