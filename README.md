@@ -46,6 +46,39 @@ Cycle Alpine is a site that allows users to view and record their times on speci
 14. **US16: Comment Edit**
     - As a Site User, I can edit the comment I have made.
 
+
+**User Story 1:**
+"As a cyclist planning a trip to the Austrian Alps, I want to be able to track my progress on specific bike routes and see the most beautiful scenic spots along the way, so that I can have an enjoyable and memorable experience.
+
+When I visit the website, I want to be able to sign up for an account using my email and password, or by using a third-party authentication service. Once I'm signed up, I want to be able to browse a map of the Austrian Alps that shows all available bike routes, and select a route that suits my interests and skill level.
+
+After selecting a route, I want to be able to see a detailed map that highlights the most scenic spots along the way, such as mountain peaks, lakes, and historical landmarks. I also want to be able to track my progress on the route by starting and stopping a timer that records my time and distance, and see my progress displayed in real-time on the website.
+
+Finally, I want to be able to compare my progress with other users who have completed the same route, and see how I stack up against other cyclists. I want to be able to view leaderboards and rankings for each route, and filter the results by age group or other criteria."
+
+ 
+
+**User Story 2**
+: "As a cycling enthusiast living in the Austrian Alps, I want to be able to track my progress on specific bike routes and compete with other local cyclists, so that I can improve my skills and have fun.
+
+When I visit the website, I want to be able to sign in to my account using my email and password, or by using a third-party authentication service. Once I'm signed in, I want to be able to see a map of all available bike routes in the Austrian Alps, and select a route that I want to track my progress on.
+
+After selecting a route, I want to be able to start and stop a timer that tracks my time on that route, and see my progress displayed in real-time on the website. I also want to be able to save my progress data to my account, so that I can come back later and see how I've improved over time.
+
+Finally, I want to be able to compare my progress with other local cyclists who have completed the same route, and see how I stack up against the competition. I want to be able to view leaderboards and rankings for each route, and filter the results by age group or other criteria. I also want to be able to connect with other local cyclists through the website and arrange group rides and events."
+
+**User Story 3 Austrian tourist board**
+
+"As the Austrian Tourist Board, we want to encourage tourists to visit the Austrian Alps and experience the beauty of the region through cycling. We plan to partner with a website that allows users to track their progress on specific bike routes and share their experiences with others.
+
+When we visit the website, we want to see a visually appealing and easy-to-use interface that showcases the most popular bike routes in the region. We want to be able to see detailed maps of each route, highlighting the most scenic spots and points of interest along the way.
+
+We also want to be able to see user-generated content, such as photos and reviews, to get an idea of what it's like to cycle in the Austrian Alps. We want to be able to filter the content by location, skill level, or other criteria, so that we can tailor our marketing efforts to different types of cyclists.
+
+Finally, we want to be able to collaborate with the website owners to promote cycling in the Austrian Alps to a wider audience. We want to be able to share user-generated content on our social media channels, and offer incentives to users who complete certain routes or achieve certain milestones.
+
+By partnering with this website, we hope to encourage more tourists to visit the Austrian Alps and experience the natural beauty of the region through cycling."
+
 ## Features
 
 ### Existing Features
@@ -57,16 +90,29 @@ Cycle Alpine is a site that allows users to view and record their times on speci
 • **F02 Landing Page Image and Text**
    - Located at the top of the landing page (home page), there is a visually appealing section featuring a captivating photograph accompanied by text overlay. This combination effectively communicates the purpose of the website as a platform for discovering new and exciting cycle routes.
    ![Image home and nav](static/readmeimages%20/homepageheronav.png)
-• **F03 Set Routes**
-• **F03 Set Routes**
-   - Further down on the landing/home page, a list of cycle routes is shown. Each summary gives an image of the hike, a title, details on distance and estimated duration, and an image rating the difficulty of the route - easy/moderate/hard. At a glance, the user can quickly decide if this is a hike that might appeal to them. Each route picture expands when clicked with the buttons then becoming active. The user can then decide to view extra detail on the route and log a time or view previous times.
+• 
+
+•**F03 Set Routes**
+   - Further down on the landing/home page, a list of cycle routes is shown. Each summary gives an image of the hike and a title,  At a glance, the user can quickly decide if this is a hike that might appeal to them. Each route picture expands when clicked with the buttons then becoming active. The user can then decide to view extra detail on the route and log a time or view previous times.
+
+    ![Image home and nav](static/readmeimages%20/setroutes.png)
+
 • **F04 Routes Detail Page**
    - When a user clicks on a cycle summary title on the home page, they are brought to the Cycle Detail page for the clicked cycle. Here the user is shown a full description of the cycle route, the location for the route, the difficulty rating, a map, and estimated duration. Only users who are signed in can comment on a route.
-• **F05 Comment on a Route**
-   - In order to comment on a route, a user must be signed in. A comment can be added on any time that users have recorded or new cycle route that users have logged. The user enters their comment in a text box under the hike description and clicks on Submit. The comment must be approved by the admin user before it will be visible on the Hike Detail page. To approve comments, the admin user logs in to the admin pages, opens the Comments table, selects the comment(s) to be approved, chooses the 'Approve Comments' action from the drop-down menu, and clicks 'Go'.
+
+     ![Image home and nav](static/readmeimages%20/setroutewithmap.png
+
+• **F05 Comment on a set Route**
+   - In order to comment on a route, a user must be signed in. A comment can be added on any time that users have recorded or new cycle route that users have logged. The user enters their comment in a text box under the cycle description and clicks on Submit. The comment must be approved by the admin user before it will be visible. To approve comments, the admin user logs in to the admin pages, opens the Comments table, selects the comment(s) to be approved, chooses the 'Approve Comments' action from the drop-down menu, and clicks 'Go'.
+
+    ![Image home and nav](static/readmeimages%20/publisedownroute.png
+    )
 • **F08 My Routes Page**
    - In order to access the My Routes page, a user must be signed in. The My Routes page provides a convenient place for the user to write down their own route to share with the community. Users are then able to comment on one another's routes by clicking on the post.
-• **F10 User Authentication**
+
+    ![Image home and nav](static/readmeimages%20/postownroute.png
+
+• **F09 User Authentication**
    - The application provides the following user authentication-related functions:
      - User Registration: The application provides user authentication features, including user registration. To sign in, users need to register first. The "Register" option is available on the navigation bar when no user is currently signed in. During registration, users are required to provide a username, an optional email address (which must be unique), and a password (entered twice for confirmation). Once registered, users can log in to the application and access its features.
      - User Sign-in: Once registered, a user can sign in and will have access to extra functionality, namely:
@@ -75,34 +121,30 @@ Cycle Alpine is a site that allows users to view and record their times on speci
        - Time their routes on the routes set by the website
        - To sign in, the user must provide a) a registered username and b) the password for the username.
      - User Sign-out: A user who is currently signed in can easily sign out by clicking on the "Sign out" link available on the navigation bar. To complete the sign-out process, the user simply needs to confirm the action by clicking on the "Sign out" button displayed on the page.
+
+
 • **F11 Add and Publish a Route**
    - The admin user, who has special privileges, is responsible for adding and publishing routes using the admin pages. These pages can be accessed either by appending '/admin' to the application URL or by signing in to the application and clicking on the "Admin" link, which is only visible when the admin user is signed in. To add a new route, the admin user can click on the "+ Add" link located next to the route table name form where the admin user can enter the necessary data for the route. It's important to note that route titles must be unique, and as the admin user starts typing the title, a slug (a URL-friendly version of the title) will be automatically generated. A rich editor called Summernote is provided for the hike description content field, allowing the admin user to easily add formatting to the text.
 
 • **F12 Visual Route Maps**
    - There is a visual route map for each set route. This map shows a start and end point with a route between these points.
 
+    ![Image home and nav](static/readmeimages%20/setroutewithmap.png)
+
 • **F13 On-screen Messages**
    - An on-screen message appears whenever a user has written a comment to tell the user their comment is waiting for approval.
 
-# Cycle Site
 
-This is a README file for the Cycle Site project.
 
 ## Wireframes
 
-The wireframe diagrams below describe the Home, Site routes, and user routes. Wireframes are available for desktop, tablet, and smartphone views.
+The wireframe diagrams below describe the Home, Site  Wireframes are available for desktop, tablet, and smartphone views. 
 
-### Desktop Wireframes
+![Image home and nav](static/readmeimages%20/wireframe1.png)
+![Image home and nav](static/readmeimages%20/wireframe%202.png)
 
-[Link to Desktop Wireframes]
 
-### Tablet Wireframes
 
-[Link to Tablet Wireframes]
-
-### Smartphone Wireframes
-
-[Link to Smartphone Wireframes]
 
 ## Planning
 
