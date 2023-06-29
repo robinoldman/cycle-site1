@@ -95,22 +95,21 @@ By partnering with this website, we hope to encourage more tourists to visit the
 •**F03 Set Routes**
    - Further down on the landing/home page, a list of cycle routes is shown. Each summary gives an image of the hike and a title,  At a glance, the user can quickly decide if this is a hike that might appeal to them. Each route picture expands when clicked with the buttons then becoming active. The user can then decide to view extra detail on the route and log a time or view previous times.
 
-    ![set routes(static/readmeimages%20/setroutes.png)
+    ![set routes](static/readmeimages%20/setroutes.png)
 
 • **F04 Routes Detail Page**
    - When a user clicks on a cycle summary title on the home page, they are brought to the Cycle Detail page for the clicked cycle. Here the user is shown a full description of the cycle route, the location for the route, the difficulty rating, a map, and estimated duration. Only users who are signed in can comment on a route.
 
-     ![setroute](static/readmeimages%20/setroutewithmap.png
+     ![setroute](static/readmeimages%20/setroutewithmap.png)
 
 • **F05 Comment on a set Route**
    - In order to comment on a route, a user must be signed in. A comment can be added on any time that users have recorded or new cycle route that users have logged. The user enters their comment in a text box under the cycle description and clicks on Submit. The comment must be approved by the admin user before it will be visible. To approve comments, the admin user logs in to the admin pages, opens the Comments table, selects the comment(s) to be approved, chooses the 'Approve Comments' action from the drop-down menu, and clicks 'Go'.
 
-    ![publise](static/readmeimages%20/publisedownroute.png
-    )
+    ![publise](static/readmeimages%20/publisedownroute.png)
 • **F08 My Routes Page**
    - In order to access the My Routes page, a user must be signed in. The My Routes page provides a convenient place for the user to write down their own route to share with the community. Users are then able to comment on one another's routes by clicking on the post.
 
-    ![postroute](static/readmeimages%20/postownroute.png
+    ![postroute](static/readmeimages%20/postownroute.png)
 
 • **F09 User Authentication**
    - The application provides the following user authentication-related functions:
