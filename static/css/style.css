@@ -324,7 +324,7 @@ background-color: #ccc;
   }
 
 @media (max-width: 1200px){
-    .mao-card{
+    .map-card{
         display: none;
     }
 }
