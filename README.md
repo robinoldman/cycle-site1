@@ -140,19 +140,19 @@ By partnering with this website, we hope to encourage more tourists to visit the
 
 The wireframe diagrams below describe the Home, Site  Wireframes are available for desktop, tablet, and smartphone views. 
 
-![Image home and nav](static/readmeimages%20/wireframe1.png)
-![Image home and nav](static/readmeimages%20/wireframe%202.png)
+![wireframe](static/readmeimages%20/wireframe1.png)
+![wireframe](static/readmeimages%20/wireframe%202.png)
 
 
 
 
 ## Planning
 
-A GitHub Project with linked Issues was used as the Agile tool for this project. The acceptance criteria were tested as each story moved to 'Done' and were also included in the final pre-submission manual testing documented in the Testing section of this README.
+A GitHub Project with linked Issues was used as the Agile tool for this project. The acceptance criteria were tested as each story moved to 'Done' and were also included in the final pre-submission manual testing documented in the Testing section of this README. I have attached a image of the agile and moved the stories around for ease of reading rather than all done
 
-Agile tool can be found here: [Link to Agile Tool]
+Agile tool can be found here: [Aglie](https://github.com/robinoldman/cycle-site1/blob/main/agile.png)
 
-## Technologies Used
+
 
 ### Languages Used
 
@@ -174,7 +174,7 @@ Agile tool can be found here: [Link to Agile Tool]
 10. Django allauth: Employed for account registration and authentication functionality.
 11. Django Crispy Forms: Used to simplify the rendering of forms in the application.
 
-## Testing
+
 
 ### Validator Testing
 
@@ -186,8 +186,11 @@ Agile tool can be found here: [Link to Agile Tool]
   - Results for Login: Pass
 
 - CSS Validator: Pass
-
 - JavaScript Validator: Pass
+
+![validator](static/readmeimages%20/validator.png)
+![validator](static/readmeimages%20/validator1.png)
+![validator](static/readmeimages%20/validator2.png)
 
 ### Browser Compatibility
 
@@ -197,6 +200,8 @@ To ensure the application's compatibility across different browsers, the followi
 ### Manual Testing Test Cases and Results
 
 The application underwent manual testing to validate its functionality and adherence to user story acceptance criteria. The test cases and results are documented in a PDF, which includes cross-references to the corresponding Feature IDs. The test cases were designed based on the acceptance criteria of user stories, enabling thorough testing throughout the development iterations.
+
+[Manual test](https://github.com/robinoldman/cycle-site1/blob/main/test.pdf)
 
 ### Known bugs
 
