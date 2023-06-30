@@ -2,6 +2,9 @@
 
 Cycle Alpine is a site that allows users to view and record their times on specific Austrian cycle routes.
 
+https://cycle.herokuapp.com/
+[cycle](https://cycle.herokuapp.com/)
+
 ## Table of Contents
 
 - [User Experience (UX)](#user-experience-ux)
@@ -134,7 +137,7 @@ By partnering with this website, we hope to encourage more tourists to visit the
 • **F13 On-screen Messages**
    - An on-screen message appears whenever a user has written a comment to tell the user their comment is waiting for approval.
 
-
+![ui](static/readmeimages%20/uigrid.png)
 
 ## Wireframes
 
@@ -226,7 +229,7 @@ Deployment Instructions:
 To deploy this project, follow the detailed steps outlined below. Code Institute also provides a summary of similar processes, which can be found here: [Link to Code Institute deployment summary]
 
 1. Cloning the Repository:
-   - Visit the project repository on GitHub: [Link to GitHub Repository]
+   - Visit the project repository on GitHub: [https://github.com/robinoldman/cycle-site1
    - Click the "Code" button on the right side of the screen, select "HTTPs," and copy the provided link.
    - Open a GitBash terminal and navigate to the desired directory for the clone.
    - In the terminal, enter "git clone" followed by the copied URL, then press Enter to initiate the cloning process.
